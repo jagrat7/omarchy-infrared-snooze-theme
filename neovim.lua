@@ -1,5 +1,3 @@
--- Infrared Snooze for Neovim, built on bjarneo/aether.nvim.
---
 -- The palette is copied from colors.toml. aether.nvim on its own never uses
 -- `accent` and draws floats, search and titles in blue, so on_colors and
 -- on_highlights below move the focus colours over to the ember red accent.

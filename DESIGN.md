@@ -49,7 +49,7 @@ Rules:
   error, which is why the accent leans orange and `red` leans pink.
 - **Only load glows.** In graphs and meters, rising usage moves from dim to
   the accent. Free or idle things stay cool.
-- **Unfocused things doze.** Inactive windows are dimmed and more see-through.
+- **Unfocused things doze.** Inactive windows are more see-through.
   Menus and tooltips use a dimmer version of the border glow.
 
 ## Files
@@ -59,7 +59,7 @@ file where the generated one doesn't fit the palette:
 
 | File | Why it's hand-tuned |
 |---|---|
-| `hyprland.lua` | gaps, rounding, blur, red glow shadow, inactive dimming, glass opacity, shell blur, slow "drowse" animations |
+| `hyprland.lua` | gaps, rounding, blur, red glow shadow, glass opacity, shell blur, slow "drowse" animations |
 | `neovim.lua` | aether.nvim never uses the accent and draws floats and search in blue |
 | `gum_env.lua` | the chosen item glows in the accent; filter matches and log levels are amber instead of looking like errors |
 | `shell.toml` | translucent surfaces for blur, a dimmer glow for menus, bright red for wrong-password errors |

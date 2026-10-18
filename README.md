@@ -1,8 +1,8 @@
 # Infrared Snooze
 
 A dim, dark Omarchy theme: warm red-black surfaces, an ember red glow on
-whatever has focus, and soft dusty colours for everything else. Unfocused windows dim and
-doze; animations drift in slowly.
+whatever has focus, and soft dusty colours for everything else. Unfocused windows turn
+more see-through; animations drift in slowly.
 
 See [DESIGN.md](DESIGN.md) for the palette roles and why each hand-tuned file
 exists.
@@ -36,8 +36,8 @@ Omarchy's default Hyprland look and default Neovim and gum colours.
 ## What's included
 
 - `colors.toml`: the palette; Omarchy generates every other app config from it
-- `hyprland.lua`: red-to-amber gradient borders, focused-window glow, inactive
-  dimming, glass opacity, blur behind the Omarchy shell, slow soft animations
+- `hyprland.lua`: red-to-amber gradient borders, focused-window glow,
+  glass opacity, blur behind the Omarchy shell, slow soft animations
 - `neovim.lua`: [aether.nvim](https://github.com/bjarneo/aether.nvim) with the
   ember red accent on the cursor, current line number, titles, search and floats
 - `gum_env.lua`: gum prompt colours for Omarchy's terminal scripts

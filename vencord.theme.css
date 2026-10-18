@@ -62,11 +62,11 @@ body {
     --text-4: #785c56;
     --text-5: #896d65;
 
-    /* Surfaces warm up toward the glow instead of greying out toward the
-       foreground. bg-4 is the chat, bg-1 the most raised panel. */
-    --bg-1: color-mix(in srgb, var(--irs-bg), var(--irs-accent) 10%);
-    --bg-2: color-mix(in srgb, var(--irs-bg), var(--irs-accent) 7%);
-    --bg-3: color-mix(in srgb, var(--irs-bg), var(--irs-accent) 4%);
+    /* Raised panels lift slightly toward the warm foreground. bg-4 is the
+       chat, bg-1 the most raised panel. */
+    --bg-1: color-mix(in srgb, var(--irs-bg), var(--irs-fg) 8%);
+    --bg-2: color-mix(in srgb, var(--irs-bg), var(--irs-fg) 5%);
+    --bg-3: color-mix(in srgb, var(--irs-bg), var(--irs-fg) 3%);
     --bg-4: var(--irs-bg);
     /* Hovered and selected rows lift to a warm grey rather than a red tint,
        which turns muddy at this size. */

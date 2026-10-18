@@ -42,7 +42,7 @@ hl.config({
     -- Unfocused windows doze off: dimmed a little, and set back by the
     -- glass opacity rule below.
     dim_inactive = true,
-    dim_strength = 0.08,
+    dim_strength = 0.12,
 
     -- The focused window gets a faint ember red glow; the rest only cast a dark
     -- shadow. Kept faint (28) so it reads as a soft halo.
@@ -63,7 +63,7 @@ hl.config({
       xray = false,
       noise = 0.02,
       contrast = 1.0,
-      brightness = 0.8,
+      brightness = 0.7,
       vibrancy = 0.15,
       vibrancy_darkness = 0.2,
       popups = true,

@@ -85,7 +85,7 @@ body {
     /* Mute, deafen and the like stay in the error pink, not the accent. */
     --accent-new: var(--red-1);
 
-    /* Mentions glow infrared; replies to you are a cool blue so the two
+    /* Mentions glow red; replies to you are a cool blue so the two
        never look the same. */
     --mention: linear-gradient(to right, color-mix(in srgb, var(--irs-accent) 14%, transparent) 40%, transparent);
     --mention-hover: linear-gradient(to right, color-mix(in srgb, var(--irs-accent) 8%, transparent) 40%, transparent);

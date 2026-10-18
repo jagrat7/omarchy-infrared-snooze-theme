@@ -5,7 +5,10 @@
 A dark room at night lit only by a heat lamp. Surfaces are warm red-black,
 focus glows a dim red, and everything that isn't asking for attention is soft
 and a little sleepy.
-theme is meant to put u in a warm sleepy mode. space stary, dreamy, sky, fantasy stuff
+
+The theme should put you in a warm, sleepy mood: starry space, dreamy skies
+and a touch of fantasy.
+
 ## Colour roles
 
 `colors.toml` is the source of truth. Change colours there first, then update

@@ -58,7 +58,7 @@ return {
       on_colors = function(c)
         local util = require("aether.utils")
 
-        -- Float borders and search glow infrared instead of blue.
+        -- Float borders and search glow red instead of blue.
         c.border_highlight = util.blend_bg(accent, 0.7)
         c.bg_search = util.blend_bg(accent, 0.3)
 

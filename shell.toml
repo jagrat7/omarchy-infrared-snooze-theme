@@ -4,7 +4,7 @@
 #   - menus, tooltips and the idle lock field use a dimmer glow border; the
 #     full red gradient is kept for focus and typing
 #   - errors use bright_red so a wrong password never looks like the normal
-#     infrared border
+#     red border
 #   - selected rows lift to a warm grey (a red tint looked muddy); their
 #     text and focused controls use the accent
 

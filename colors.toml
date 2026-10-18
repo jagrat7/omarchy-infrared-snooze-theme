@@ -1,32 +1,46 @@
-# Placeholder palette copied from Nord. Replace with Infrared Snooze colors.
+# Infrared Snooze
+#
+# A dim room lit by a heat lamp. Warm red-black surfaces, an infrared
+# orange-red glow for focus, and soft dusty colours for everything else.
+# This file is the source of truth: every other file in the theme takes
+# its colours from here.
+
 mode = "dark"
 
-accent = "#81a1c1"
-selection = "#434c5e"
-muted = "#4c566a"
+# Infrared glow: focus, cursor, active border. Kept more orange than `red`
+# so that a focused element never reads as an error.
+accent = "#ff5c3a"
+selection = "#3b1c22"
+muted = "#7d5d60"
 
-background = "#2e3440"
-dark_background = "#222730"
-darker_background = "#191c23"
-lighter_background = "#3b4252"
+background = "#130b0d"
+dark_background = "#0d0709"
+darker_background = "#080405"
+lighter_background = "#1f1215"
 
-foreground = "#d8dee9"
-dark_foreground = "#667080"
-light_foreground = "#adb5c4"
-bright_foreground = "#d8dee9"
+foreground = "#ead2ca"
+dark_foreground = "#8c6f6d"
+light_foreground = "#d6bab3"
+bright_foreground = "#fcece6"
 
-red = "#bf616a"
-yellow = "#ebcb8b"
-orange = "#d5967a"
-green = "#a3be8c"
-cyan = "#88c0d0"
-blue = "#81a1c1"
-magenta = "#b48ead"
-brown = "#6a4b3d"
+# Errors and deletions. Pinker than `accent` on purpose.
+red = "#e8476a"
+yellow = "#f2a65a"
+orange = "#ff8650"
+green = "#a3b87c"
+cyan = "#7fb5ab"
+blue = "#8d9fd8"
+magenta = "#d27aa8"
+brown = "#6b3b2e"
 
-bright_red = "#bf616a"
-bright_yellow = "#ebcb8b"
-bright_green = "#a3be8c"
-bright_cyan = "#8fbcbb"
-bright_blue = "#81a1c1"
-bright_magenta = "#b48ead"
+bright_red = "#ff6f8c"
+bright_yellow = "#ffc485"
+bright_green = "#bfd49a"
+bright_cyan = "#a2d2c8"
+bright_blue = "#aebdf2"
+bright_magenta = "#ef9fc6"
+
+# Shared by Hyprland window borders and the Omarchy shell (popups,
+# notifications, lock screen). The glow cools from infrared into crimson.
+hyprland_active_border = "rgba(ff5c3aee) rgba(e8476acc) 45deg"
+hyprland_inactive_border = "rgba(3b1c2299)"

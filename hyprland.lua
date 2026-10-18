@@ -5,8 +5,8 @@
 -- hyprland_active_border / hyprland_inactive_border in colors.toml; change
 -- both together.
 
-local active_border_color = { colors = { "rgba(b30000ee)", "rgba(4d0000cc)" }, angle = 45 }
-local inactive_border_color = "rgba(3b1c2299)"
+local active_border_color = { colors = { "rgba(9e2418dd)", "rgba(cc432edd)", "rgba(d27a3abb)" }, angle = 45 }
+local inactive_border_color = "rgba(3d1f1c99)"
 
 hl.config({
   general = {
@@ -27,11 +27,11 @@ hl.config({
     },
 
     groupbar = {
-      text_color = "rgb(fcece6)",
-      text_color_inactive = "rgba(ead2ca90)",
+      text_color = "rgb(d8b8a2)",
+      text_color_inactive = "rgba(c2a08e90)",
       col = {
-        active = "rgba(b3000040)",
-        inactive = "rgba(130b0d80)",
+        active = "rgba(cc432e40)",
+        inactive = "rgba(150b0b80)",
       },
     },
   },
@@ -44,15 +44,14 @@ hl.config({
     dim_inactive = true,
     dim_strength = 0.08,
 
-    -- The focused window gets a faint red glow; the rest only cast a dark
-    -- shadow. The glow is a brighter red than the border (ff0000) with green
-    -- and blue at 00, kept faint (28) so it reads as a soft halo.
+    -- The focused window gets a faint ember red glow; the rest only cast a dark
+    -- shadow. Kept faint (28) so it reads as a soft halo.
     shadow = {
       enabled = true,
       range = 22,
       render_power = 3,
-      color = "rgba(ff000028)",
-      color_inactive = "rgba(08040599)",
+      color = "rgba(cc432e28)",
+      color_inactive = "rgba(09050599)",
     },
 
     blur = {

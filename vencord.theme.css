@@ -10,9 +10,9 @@
 /*
  * thpm installs this file into ~/.config/vesktop/themes/ instead of its
  * generated stylesheet. The generated one takes Discord's accent from `blue`,
- * which turns the whole client periwinkle; here the accent is a dim sleep red
- * (green and blue at 00), the surfaces are warm, and the error pink is kept
- * for mute, deafen and DnD.
+ * which turns the whole client periwinkle; here the accent is ember red, the
+ * surfaces are warm and dim, and the crimson error colour is kept for mute,
+ * deafen and DnD.
  */
 
 @import url("https://cdn.jsdelivr.net/gh/OldJobobo/thpm@main/assets/vencord/thpm-midnight.css");
@@ -47,20 +47,20 @@ body {
     --colors: on;
 
     /* Palette, copied from colors.toml. */
-    --irs-accent: #b30000;
-    --irs-bg: #130b0d;
-    --irs-darker-bg: #080405;
-    --irs-fg: #ead2ca;
-    --irs-bright-fg: #fcece6;
-    --irs-muted: #7d5d60;
+    --irs-accent: #cc432e;
+    --irs-bg: #150b0b;
+    --irs-darker-bg: #090505;
+    --irs-fg: #c2a08e;
+    --irs-bright-fg: #d8b8a2;
+    --irs-muted: #785c56;
 
     /* Text. text-0 sits on accent-coloured buttons and badges. */
-    --text-0: #130b0d;
-    --text-1: #fcece6;
-    --text-2: #ead2ca;
-    --text-3: #d6bab3;
-    --text-4: #7d5d60;
-    --text-5: #8c6f6d;
+    --text-0: #150b0b;
+    --text-1: #d8b8a2;
+    --text-2: #c2a08e;
+    --text-3: #b69684;
+    --text-4: #785c56;
+    --text-5: #896d65;
 
     /* Surfaces warm up toward the glow instead of greying out toward the
        foreground. bg-4 is the chat, bg-1 the most raised panel. */
@@ -69,19 +69,18 @@ body {
     --bg-3: color-mix(in srgb, var(--irs-bg), var(--irs-accent) 4%);
     --bg-4: var(--irs-bg);
     /* Hovered and selected rows lift to a warm grey rather than a red tint,
-       which turned muddy maroon with the dim accent. */
+       which turns muddy at this size. */
     --hover: color-mix(in srgb, var(--irs-fg) 5%, transparent);
     --active: color-mix(in srgb, var(--irs-fg) 9%, transparent);
     --active-2: color-mix(in srgb, var(--irs-fg) 13%, transparent);
     --message-hover: color-mix(in srgb, var(--irs-darker-bg) 55%, transparent);
 
-    /* Dim red accent: links, badges, unread pills, primary buttons. Every
-       shade keeps green and blue at 00. */
+    /* Ember red accent: links, badges, unread pills, primary buttons. */
     --accent-1: var(--irs-accent);
     --accent-2: var(--irs-accent);
     --accent-3: var(--irs-accent);
-    --accent-4: #cc0000;
-    --accent-5: #800000;
+    --accent-4: #d85a43;
+    --accent-5: #a8331f;
     /* Mute, deafen and the like stay in the error pink, not the accent. */
     --accent-new: var(--red-1);
 
@@ -89,63 +88,45 @@ body {
        never look the same. */
     --mention: linear-gradient(to right, color-mix(in srgb, var(--irs-accent) 14%, transparent) 40%, transparent);
     --mention-hover: linear-gradient(to right, color-mix(in srgb, var(--irs-accent) 8%, transparent) 40%, transparent);
-    --reply: linear-gradient(to right, color-mix(in srgb, #8d9fd8 12%, transparent) 40%, transparent);
-    --reply-hover: linear-gradient(to right, color-mix(in srgb, #8d9fd8 7%, transparent) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in srgb, #737ea0 12%, transparent) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in srgb, #737ea0 7%, transparent) 40%, transparent);
 
-    --online: #a3b87c;
-    --dnd: #e8476a;
-    --idle: #f2a65a;
-    --streaming: #d27aa8;
-    --offline: #7d5d60;
+    --online: #869a5a;
+    --dnd: #c2445f;
+    --idle: #c99a4a;
+    --streaming: #a46f8a;
+    --offline: #785c56;
 
     --border-light: color-mix(in srgb, var(--irs-muted) 18%, transparent);
     --border: color-mix(in srgb, var(--irs-muted) 30%, transparent);
     --border-hover: color-mix(in srgb, var(--irs-accent) 40%, transparent);
     --button-border: color-mix(in srgb, var(--irs-fg) 12%, transparent);
 
-    --red-1: #ff6f8c;
-    --red-2: #e8476a;
-    --red-3: #e8476a;
-    --red-4: color-mix(in srgb, #e8476a, #ffffff 14%);
-    --red-5: color-mix(in srgb, #e8476a, #130b0d 18%);
-    --green-1: #bfd49a;
-    --green-2: #a3b87c;
-    --green-3: #a3b87c;
-    --green-4: color-mix(in srgb, #a3b87c, #ffffff 14%);
-    --green-5: color-mix(in srgb, #a3b87c, #130b0d 18%);
-    --blue-1: #aebdf2;
-    --blue-2: #8d9fd8;
-    --blue-3: #8d9fd8;
-    --blue-4: color-mix(in srgb, #8d9fd8, #ffffff 14%);
-    --blue-5: color-mix(in srgb, #8d9fd8, #130b0d 18%);
-    --yellow-1: #ffc485;
-    --yellow-2: #f2a65a;
-    --yellow-3: #f2a65a;
-    --yellow-4: color-mix(in srgb, #f2a65a, #ffffff 14%);
-    --yellow-5: color-mix(in srgb, #f2a65a, #130b0d 18%);
-    --purple-1: #ef9fc6;
-    --purple-2: #d27aa8;
-    --purple-3: #d27aa8;
-    --purple-4: color-mix(in srgb, #d27aa8, #ffffff 14%);
-    --purple-5: color-mix(in srgb, #d27aa8, #130b0d 18%);
-}
-
-/* The accent is too dark for Midnight's black button text, so text and icons
-   on accent buttons and badges use the light foreground instead. Same
-   selectors as the Midnight base, so these win by coming later. */
-@container root style(--colors: on) {
-    body,
-    .theme-dark:not(.custom-user-profile-theme),
-    .theme-light:not(.custom-user-profile-theme) {
-        --control-primary-text-default: var(--text-1);
-        --control-primary-text-hover: var(--text-1);
-        --control-primary-text-active: var(--text-1);
-        --control-primary-icon-default: var(--text-1);
-        --control-primary-icon-hover: var(--text-1);
-        --control-primary-icon-active: var(--text-1);
-        --badge-text-default: var(--text-1);
-        --badge-expressive-text-default: var(--text-1);
-    }
+    --red-1: #d85c74;
+    --red-2: #c2445f;
+    --red-3: #c2445f;
+    --red-4: color-mix(in srgb, #c2445f, #ffffff 14%);
+    --red-5: color-mix(in srgb, #c2445f, #150b0b 18%);
+    --green-1: #9db06b;
+    --green-2: #869a5a;
+    --green-3: #869a5a;
+    --green-4: color-mix(in srgb, #869a5a, #ffffff 14%);
+    --green-5: color-mix(in srgb, #869a5a, #150b0b 18%);
+    --blue-1: #8892b3;
+    --blue-2: #737ea0;
+    --blue-3: #737ea0;
+    --blue-4: color-mix(in srgb, #737ea0, #ffffff 14%);
+    --blue-5: color-mix(in srgb, #737ea0, #150b0b 18%);
+    --yellow-1: #dcb060;
+    --yellow-2: #c99a4a;
+    --yellow-3: #c99a4a;
+    --yellow-4: color-mix(in srgb, #c99a4a, #ffffff 14%);
+    --yellow-5: color-mix(in srgb, #c99a4a, #150b0b 18%);
+    --purple-1: #bb83a0;
+    --purple-2: #a46f8a;
+    --purple-3: #a46f8a;
+    --purple-4: color-mix(in srgb, #a46f8a, #ffffff 14%);
+    --purple-5: color-mix(in srgb, #a46f8a, #150b0b 18%);
 }
 
 ::selection {

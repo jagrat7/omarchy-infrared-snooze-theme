@@ -3,8 +3,8 @@
 ## Idea
 
 A dark room at night lit only by a heat lamp. Surfaces are warm red-black,
-focus glows a dim red, and everything that isn't asking for attention is soft
-and a little sleepy.
+anything that glows is led by an ember red with amber and honey behind it, and
+everything that isn't asking for attention is dim, soft and a little sleepy.
 
 The theme should put you in a warm, sleepy mood: starry space, dreamy skies
 and a touch of fantasy.
@@ -16,28 +16,37 @@ the hand-tuned files below to match.
 
 | Role | Colour | Used for |
 |---|---|---|
-| `accent` | `#b30000` dim sleep red | focus: cursor, active border, selected rows, current line |
-| `red` | `#e8476a` crimson-pink | errors, deletions, failed states only |
-| `bright_red` | `#ff6f8c` | errors on shell surfaces (lock, polkit) |
-| `background` family | `#130b0d` → `#080405` | surfaces, darkest at the edges |
-| `selection` | `#3b1c22` | selection, quiet borders |
-| `muted` | `#7d5d60` | comments, line numbers, idle chrome |
-| cool colours (`blue`, `cyan`, `green`) | dusty | anything at rest, so the warm colours mean something |
+| `accent` | `#cc432e` ember red | focus: cursor, active border, current line, selected text |
+| `orange`, `yellow` | `#d27a3a` amber, `#c99a4a` honey | the rest of the warm spectrum: border gradient, load ramps, warnings |
+| `red` | `#c2445f` crimson-pink | errors, deletions, failed states only |
+| `bright_red` | `#d85c74` | errors on shell surfaces (lock, polkit) |
+| `foreground` | `#c2a08e` | text; about 40% of white, warm and low in blue |
+| `background` family | `#150b0b` → `#090505` | surfaces, darkest at the edges |
+| `selection` | `#3d1f1c` | selection, quiet borders |
+| `muted` | `#785c56` | comments, line numbers, idle chrome |
+| cool colours (`blue`, `cyan`, `green`, `magenta`) | dim and greyed | anything at rest, so the warm colours mean something |
 
 Rules:
 
-- **The accent is a dim sleep red.** Green and blue stay at `00` in the accent
-  and every shade made from it (border gradient, glow, Vesktop states). That
-  is the screen light least likely to keep you awake. It is kept dim on
-  purpose for low contrast: use the darker steps `#800000` and `#4d0000` for
-  fades, and never mix in white or other colours to brighten it.
-- **Highlights are warm grey, not red.** Hovered and selected rows lift toward
-  the foreground; a red tint at that size turns muddy maroon. Red is for small
-  marks: borders, badges, the cursor, selected text.
-- **Text on the accent is light.** The accent is too dark for dark text, so
-  anything drawn on top of it uses `bright_foreground`.
+- **Dim first.** Brightness matters more than hue, and the text is most of the
+  light a mostly-text window gives out. Keep `foreground` around 40% of white
+  and `bright_foreground` around 50%; don't brighten them to add contrast.
+  Every text colour must still reach at least 3:1 on `background`.
+- **Red leads, the spectrum supports.** The accent, border start, glow and the
+  top of every load ramp are red, so the theme reads as red. Amber and honey
+  appear behind it (the border's tail, warnings, the middle of ramps), never
+  as the main focus colour.
+- **Warm colours keep blue low.** Ember, amber and honey come mostly from the
+  red subpixel. Cool colours exist for meaning (diffs, links, info) and are
+  dimmed and greyed so they give out as little blue as they can.
+- **Lean ember and amber over bright yellow.** Yellow has a lot of green, and
+  green still registers at screen-level light, so use honey sparingly and dim.
+- **Highlights are warm grey, not tinted.** Hovered and selected rows lift
+  toward the foreground; a coloured tint at that size turns muddy. Colour is
+  for small marks: borders, badges, the cursor, selected text.
+- **Text on the accent is dark.** Use `background` on top of `accent`.
 - **The accent and `red` never share a job.** Focus must never look like an
-  error, which is why `red` leans pink.
+  error, which is why the accent leans orange and `red` leans pink.
 - **Only load glows.** In graphs and meters, rising usage moves from dim to
   the accent. Free or idle things stay cool.
 - **Unfocused things doze.** Inactive windows are dimmed and more see-through.

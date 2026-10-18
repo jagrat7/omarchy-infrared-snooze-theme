@@ -2,9 +2,9 @@
 --
 -- The palette is copied from colors.toml. aether.nvim on its own never uses
 -- `accent` and draws floats, search and titles in blue, so on_colors and
--- on_highlights below move the focus colours over to the dim red accent.
+-- on_highlights below move the focus colours over to the ember red accent.
 
-local accent = "#b30000"
+local accent = "#cc432e"
 
 return {
   {
@@ -19,40 +19,40 @@ return {
       },
 
       colors = {
-        bg = "#130b0d",
-        dark_bg = "#0d0709",
-        darker_bg = "#080405",
-        lighter_bg = "#1f1215",
+        bg = "#150b0b",
+        dark_bg = "#0f0808",
+        darker_bg = "#090505",
+        lighter_bg = "#211312",
 
-        fg = "#ead2ca",
-        dark_fg = "#8c6f6d",
-        light_fg = "#d6bab3",
-        bright_fg = "#fcece6",
-        muted = "#7d5d60",
+        fg = "#c2a08e",
+        dark_fg = "#896d65",
+        light_fg = "#b69684",
+        bright_fg = "#d8b8a2",
+        muted = "#785c56",
 
-        red = "#e8476a",
-        yellow = "#f2a65a",
-        orange = "#ff8650",
-        green = "#a3b87c",
-        cyan = "#7fb5ab",
-        blue = "#8d9fd8",
-        magenta = "#d27aa8",
-        brown = "#6b3b2e",
+        red = "#c2445f",
+        yellow = "#c99a4a",
+        orange = "#d27a3a",
+        green = "#869a5a",
+        cyan = "#6f8f84",
+        blue = "#737ea0",
+        magenta = "#a46f8a",
+        brown = "#6b3f30",
 
-        bright_red = "#ff6f8c",
-        bright_yellow = "#ffc485",
-        bright_green = "#bfd49a",
-        bright_cyan = "#a2d2c8",
-        bright_blue = "#aebdf2",
-        bright_magenta = "#ef9fc6",
+        bright_red = "#d85c74",
+        bright_yellow = "#dcb060",
+        bright_green = "#9db06b",
+        bright_cyan = "#84a597",
+        bright_blue = "#8892b3",
+        bright_magenta = "#bb83a0",
 
         accent = accent,
         cursor = accent,
-        foreground = "#ead2ca",
-        background = "#130b0d",
-        selection = "#3b1c22",
-        selection_foreground = "#fcece6",
-        selection_background = "#3b1c22",
+        foreground = "#c2a08e",
+        background = "#150b0b",
+        selection = "#3d1f1c",
+        selection_foreground = "#d8b8a2",
+        selection_background = "#3d1f1c",
       },
 
       on_colors = function(c)
@@ -70,14 +70,14 @@ return {
       end,
 
       on_highlights = function(hl, c)
-        hl.Cursor = { fg = c.bright_fg, bg = accent }
+        hl.Cursor = { fg = c.bg, bg = accent }
         hl.CursorLineNr = { fg = accent, bold = true }
         hl.MatchParen = { fg = accent, bold = true, underline = true }
-        hl.IncSearch = { fg = c.bright_fg, bg = accent, bold = true }
+        hl.IncSearch = { fg = c.bg, bg = accent, bold = true }
         hl.CurSearch = "IncSearch"
 
         hl.FloatTitle = { fg = accent, bg = c.bg_float, bold = true }
-        hl.TabLineSel = { fg = c.bright_fg, bg = accent, bold = true }
+        hl.TabLineSel = { fg = c.bg, bg = accent, bold = true }
         hl.Title = { fg = accent, bold = true }
         hl.PmenuSel = { bg = c.selection, fg = c.bright_fg, bold = true }
         hl.WinSeparator = { fg = c.selection, bold = true }

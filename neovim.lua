@@ -2,9 +2,9 @@
 --
 -- The palette is copied from colors.toml. aether.nvim on its own never uses
 -- `accent` and draws floats, search and titles in blue, so on_colors and
--- on_highlights below move the focus colours over to the infrared accent.
+-- on_highlights below move the focus colours over to the dim red accent.
 
-local accent = "#ff5c3a"
+local accent = "#b30000"
 
 return {
   {
@@ -70,14 +70,14 @@ return {
       end,
 
       on_highlights = function(hl, c)
-        hl.Cursor = { fg = c.bg, bg = accent }
+        hl.Cursor = { fg = c.bright_fg, bg = accent }
         hl.CursorLineNr = { fg = accent, bold = true }
         hl.MatchParen = { fg = accent, bold = true, underline = true }
-        hl.IncSearch = { fg = c.bg, bg = accent, bold = true }
+        hl.IncSearch = { fg = c.bright_fg, bg = accent, bold = true }
         hl.CurSearch = "IncSearch"
 
         hl.FloatTitle = { fg = accent, bg = c.bg_float, bold = true }
-        hl.TabLineSel = { fg = c.bg, bg = accent, bold = true }
+        hl.TabLineSel = { fg = c.bright_fg, bg = accent, bold = true }
         hl.Title = { fg = accent, bold = true }
         hl.PmenuSel = { bg = c.selection, fg = c.bright_fg, bold = true }
         hl.WinSeparator = { fg = c.selection, bold = true }

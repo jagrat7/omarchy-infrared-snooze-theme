@@ -2,7 +2,7 @@
 #
 # Omarchy's generated version never uses the accent and puts headings, bold
 # text and jump labels in color1, the same pink as errors and deletions. Here
-# the infrared accent takes the focus roles (cursor, current line number,
+# the dim red accent takes the focus roles (cursor, current line number,
 # normal-mode statusline, jump labels, H1, bold) and color1 is left for errors.
 
 # Syntax
@@ -71,7 +71,7 @@
 # background) to guarantee contrast across both light and dark Omarchy themes.
 "ui.statusline" = { fg = "background", bg = "foreground" }
 "ui.statusline.inactive" = { fg = "background", bg = "color8" }
-"ui.statusline.normal" = { fg = "background", bg = "accent", modifiers = ["bold"] }
+"ui.statusline.normal" = { fg = "bright_foreground", bg = "accent", modifiers = ["bold"] }
 "ui.statusline.insert" = { fg = "background", bg = "color2", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "background", bg = "color5", modifiers = ["bold"] }
 
@@ -96,10 +96,10 @@
 
 "ui.selection" = { bg = "selection_background", fg = "selection_foreground" }
 
-"ui.cursor" = { fg = "background", bg = "cursor" }
-"ui.cursor.primary" = { fg = "background", bg = "cursor" }
+"ui.cursor" = { fg = "bright_foreground", bg = "cursor" }
+"ui.cursor.primary" = { fg = "bright_foreground", bg = "cursor" }
 "ui.cursor.match" = { fg = "color3", modifiers = ["bold"] }
-"ui.cursor.primary.normal" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary.normal" = { fg = "bright_foreground", bg = "cursor" }
 "ui.cursor.primary.insert" = { fg = "background", bg = "color2" }
 "ui.cursor.primary.select" = { fg = "background", bg = "color5" }
 
@@ -108,7 +108,7 @@
 "ui.highlight" = { bg = "lighter_background", modifiers = ["bold"] }
 
 "ui.menu" = { fg = "foreground", bg = "background" }
-"ui.menu.selected" = { fg = "background", bg = "accent", modifiers = ["bold"] }
+"ui.menu.selected" = { fg = "bright_foreground", bg = "accent", modifiers = ["bold"] }
 
 "diagnostic.error" = { underline = { color = "color1", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "color3", style = "curl" } }
@@ -126,8 +126,9 @@ hint = "color6"
 background = "#130b0d"
 foreground = "#ead2ca"
 lighter_background = "#1f1215"
-cursor = "#ff5c3a"
-accent = "#ff5c3a"
+cursor = "#b30000"
+accent = "#b30000"
+bright_foreground = "#fcece6"
 orange = "#ff8650"
 selection_background = "#3b1c22"
 selection_foreground = "#fcece6"

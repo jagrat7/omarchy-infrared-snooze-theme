@@ -2,10 +2,11 @@
 # lock screen). Generated from colors.toml by Omarchy, then tuned:
 #   - surfaces are translucent so hyprland.lua can blur behind them
 #   - menus, tooltips and the idle lock field use a dimmer glow border; the
-#     full infrared gradient is kept for focus and typing
+#     full red gradient is kept for focus and typing
 #   - errors use bright_red so a wrong password never looks like the normal
 #     infrared border
-#   - selected rows and focused controls glow in the accent
+#   - selected rows lift to a warm grey (a red tint looked muddy); their
+#     text and focused controls use the accent
 
 [bar]
 # Alpha companions (where present) range from 0 (invisible) to 1 (opaque).
@@ -13,7 +14,7 @@ background       = "#130b0d"
 background-alpha = 0.78
 text             = "#ead2ca"
 # Modules calling attention to themselves (recording, voxtype, alerts, updates)
-active           = "#ff5c3a"
+active           = "#b30000"
 # Cross-axis size at font base-size 12. size-horizontal is the height of
 # top/bottom bars; size-vertical is the width of left/right bars. With
 # scale-with-font enabled, these grow/shrink with [font] base-size.
@@ -25,8 +26,8 @@ size-vertical    = 28
 # Shared Hyprland-derived border tokens. Surface sections reference these so
 # lock, notifications, popups, and menu-style cards stay aligned with the
 # current Hyprland active-border gradient.
-active-border            = "rgba(ff5c3aee) rgba(e8476acc) 45deg"
-active-border-foreground = "rgba(ff5c3a99) rgba(3b1c22ff) 45deg"
+active-border            = "rgba(b30000ee) rgba(4d0000cc) 45deg"
+active-border-foreground = "rgba(80000099) rgba(4d0000ff) 45deg"
 
 [controls]
 # Shared state tokens for interactive control chrome (buttons, dropdowns,
@@ -54,13 +55,13 @@ hover-cursor-border-alpha = 0.25
 # — themes that want focus to stand out override these four lines.
 focus-color        = "#ead2ca"
 focus-fill-alpha   = 0.08
-focus-border       = "#ff5c3a"
+focus-border       = "#b30000"
 focus-border-width = 1
 focus-border-alpha = 0.6
 
 # Selected: persistent chosen/current state.
-selected-color        = "#ff5c3a"
-selected-fill-alpha   = 0.14
+selected-color        = "#ead2ca"
+selected-fill-alpha   = 0.10
 selected-border       = "#ead2ca"
 selected-border-width = 0
 selected-border-alpha = 1.0
@@ -154,7 +155,7 @@ text             = "#ead2ca"
 border           = "hyprland.active-border-foreground"
 border-alpha     = 1.0
 # border-width     = 2
-countdown        = "#ff5c3a"
+countdown        = "#b30000"
 
 [launcher]
 # Same six tokens as [menu], applied to the launcher overlay. Alpha
@@ -168,9 +169,9 @@ border                    = "hyprland.active-border-foreground"
 border-alpha              = 1.0
 scrim                     = "#080405"
 scrim-alpha               = 0.55
-selected-background       = "#ff5c3a"
-selected-background-alpha = 0.12
-selected-text             = "#ff5c3a"
+selected-background       = "#ead2ca"
+selected-background-alpha = 0.08
+selected-text             = "#b30000"
 selected-border           = "hyprland.active-border-foreground"
 selected-border-alpha     = 0.25
 
@@ -185,9 +186,9 @@ border                    = "hyprland.active-border-foreground"
 border-alpha              = 1.0
 scrim                     = "#080405"
 scrim-alpha               = 0.55
-selected-background       = "#ff5c3a"
-selected-background-alpha = 0.12
-selected-text             = "#ff5c3a"
+selected-background       = "#ead2ca"
+selected-background-alpha = 0.08
+selected-text             = "#b30000"
 selected-border           = "hyprland.active-border-foreground"
 selected-border-alpha     = 0.25
 
@@ -207,7 +208,7 @@ border-alpha     = 1.0
 scrim            = "#130b0d"
 scrim-alpha      = 0.5
 # accent is the lock-icon glyph color + text-selection tint.
-accent           = "#ff5c3a"
+accent           = "#b30000"
 
 [lock]
 # Lock screen password input. background/background-alpha control the
@@ -225,7 +226,7 @@ border-active    = "hyprland.active-border"
 border-error     = "#ff6f8c"
 border-alpha     = 1.0
 # selection is the text-selection tint inside the input field.
-selection        = "#ff5c3a"
+selection        = "#b30000"
 selection-alpha  = 0.45
 
 [image-picker]
@@ -236,7 +237,7 @@ selection-alpha  = 0.45
 scrim                   = "#080405"
 scrim-alpha             = 0.5
 text                    = "#ead2ca"
-selected-border         = "#ff5c3a"
+selected-border         = "#b30000"
 selected-border-alpha   = 1.0
 unselected-border       = "#ead2ca"
 unselected-border-alpha = 0.28

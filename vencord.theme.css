@@ -10,8 +10,9 @@
 /*
  * thpm installs this file into ~/.config/vesktop/themes/ instead of its
  * generated stylesheet. The generated one takes Discord's accent from `blue`,
- * which turns the whole client periwinkle; here the accent is infrared, the
- * surfaces are warm, and the error pink is kept for mute, deafen and DnD.
+ * which turns the whole client periwinkle; here the accent is a dim sleep red
+ * (green and blue at 00), the surfaces are warm, and the error pink is kept
+ * for mute, deafen and DnD.
  */
 
 @import url("https://cdn.jsdelivr.net/gh/OldJobobo/thpm@main/assets/vencord/thpm-midnight.css");
@@ -46,7 +47,7 @@ body {
     --colors: on;
 
     /* Palette, copied from colors.toml. */
-    --irs-accent: #ff5c3a;
+    --irs-accent: #b30000;
     --irs-bg: #130b0d;
     --irs-darker-bg: #080405;
     --irs-fg: #ead2ca;
@@ -67,17 +68,20 @@ body {
     --bg-2: color-mix(in srgb, var(--irs-bg), var(--irs-accent) 7%);
     --bg-3: color-mix(in srgb, var(--irs-bg), var(--irs-accent) 4%);
     --bg-4: var(--irs-bg);
-    --hover: color-mix(in srgb, var(--irs-accent) 8%, transparent);
-    --active: color-mix(in srgb, var(--irs-accent) 15%, transparent);
-    --active-2: color-mix(in srgb, var(--irs-accent) 22%, transparent);
+    /* Hovered and selected rows lift to a warm grey rather than a red tint,
+       which turned muddy maroon with the dim accent. */
+    --hover: color-mix(in srgb, var(--irs-fg) 5%, transparent);
+    --active: color-mix(in srgb, var(--irs-fg) 9%, transparent);
+    --active-2: color-mix(in srgb, var(--irs-fg) 13%, transparent);
     --message-hover: color-mix(in srgb, var(--irs-darker-bg) 55%, transparent);
 
-    /* Infrared accent: links, badges, unread pills, primary buttons. */
-    --accent-1: color-mix(in srgb, var(--irs-accent), var(--irs-bright-fg) 30%);
+    /* Dim red accent: links, badges, unread pills, primary buttons. Every
+       shade keeps green and blue at 00. */
+    --accent-1: var(--irs-accent);
     --accent-2: var(--irs-accent);
     --accent-3: var(--irs-accent);
-    --accent-4: color-mix(in srgb, var(--irs-accent), #ffffff 14%);
-    --accent-5: color-mix(in srgb, var(--irs-accent), var(--irs-bg) 18%);
+    --accent-4: #cc0000;
+    --accent-5: #800000;
     /* Mute, deafen and the like stay in the error pink, not the accent. */
     --accent-new: var(--red-1);
 
@@ -124,6 +128,24 @@ body {
     --purple-3: #d27aa8;
     --purple-4: color-mix(in srgb, #d27aa8, #ffffff 14%);
     --purple-5: color-mix(in srgb, #d27aa8, #130b0d 18%);
+}
+
+/* The accent is too dark for Midnight's black button text, so text and icons
+   on accent buttons and badges use the light foreground instead. Same
+   selectors as the Midnight base, so these win by coming later. */
+@container root style(--colors: on) {
+    body,
+    .theme-dark:not(.custom-user-profile-theme),
+    .theme-light:not(.custom-user-profile-theme) {
+        --control-primary-text-default: var(--text-1);
+        --control-primary-text-hover: var(--text-1);
+        --control-primary-text-active: var(--text-1);
+        --control-primary-icon-default: var(--text-1);
+        --control-primary-icon-hover: var(--text-1);
+        --control-primary-icon-active: var(--text-1);
+        --badge-text-default: var(--text-1);
+        --badge-expressive-text-default: var(--text-1);
+    }
 }
 
 ::selection {

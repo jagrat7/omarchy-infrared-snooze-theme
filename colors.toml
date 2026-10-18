@@ -1,15 +1,16 @@
 # Infrared Snooze
 #
-# A dim room lit by a heat lamp. Warm red-black surfaces, an infrared
-# orange-red glow for focus, and soft dusty colours for everything else.
+# A dim room lit by a heat lamp. Warm red-black surfaces, a dim red
+# glow for focus, and soft dusty colours for everything else.
 # This file is the source of truth: every other file in the theme takes
 # its colours from here.
 
 mode = "dark"
 
-# Infrared glow: focus, cursor, active border. Kept more orange than `red`
-# so that a focused element never reads as an error.
-accent = "#ff5c3a"
+# Sleep red: focus, cursor, active border. Green and blue stay at 00 (the
+# screen light least likely to keep you awake) and it is kept dim for low
+# contrast. Errors use the pinker `red` below so focus never reads as one.
+accent = "#b30000"
 selection = "#3b1c22"
 muted = "#7d5d60"
 
@@ -41,6 +42,7 @@ bright_blue = "#aebdf2"
 bright_magenta = "#ef9fc6"
 
 # Shared by Hyprland window borders and the Omarchy shell (popups,
-# notifications, lock screen). The glow cools from infrared into crimson.
-hyprland_active_border = "rgba(ff5c3aee) rgba(e8476acc) 45deg"
+# notifications, lock screen). Dim red fading to darker red, green and
+# blue at 00.
+hyprland_active_border = "rgba(b30000ee) rgba(4d0000cc) 45deg"
 hyprland_inactive_border = "rgba(3b1c2299)"

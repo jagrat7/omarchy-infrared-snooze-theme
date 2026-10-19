@@ -1,8 +1,9 @@
 # Infrared Snooze: Omarchy shell surfaces (bar, menus, popups, notifications,
 # lock screen). Generated from colors.toml by Omarchy, then tuned:
 #   - surfaces are translucent so hyprland.lua can blur behind them
-#   - menus, tooltips and the idle lock field use a dimmer glow border; the
-#     full red gradient is kept for focus and typing
+#   - menus, the launcher and notifications wear the full window gradient;
+#     tooltips and the idle lock field use a dimmer glow border, with the
+#     full gradient kept for typing
 #   - errors use bright_red so a wrong password never looks like the normal
 #     red border
 #   - selected rows lift to a warm grey (a red tint looked muddy); their
@@ -152,7 +153,7 @@ background-alpha = 0.88
 text             = "#c2a08e"
 # Conventionally matches the Hyprland active-window border. Border accepts
 # either a solid color or the full active-border gradient.
-border           = "hyprland.active-border-foreground"
+border           = "hyprland.active-border"
 border-alpha     = 1.0
 # border-width     = 2
 countdown        = "#cc432e"
@@ -165,7 +166,7 @@ countdown        = "#cc432e"
 background                = "#150b0b"
 background-alpha          = 0.88
 text                      = "#c2a08e"
-border                    = "hyprland.active-border-foreground"
+border                    = "hyprland.active-border"
 border-alpha              = 1.0
 scrim                     = "#090505"
 scrim-alpha               = 0.55
@@ -182,7 +183,7 @@ selected-border-alpha     = 0.25
 background                = "#150b0b"
 background-alpha          = 0.88
 text                      = "#c2a08e"
-border                    = "hyprland.active-border-foreground"
+border                    = "hyprland.active-border"
 border-alpha              = 1.0
 scrim                     = "#090505"
 scrim-alpha               = 0.55

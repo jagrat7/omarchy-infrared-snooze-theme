@@ -1,0 +1,247 @@
+<!doctype html>
+<!--
+  Infrared Snooze: animation options, live preview.
+  Open in a browser. Shows the window-close and workspace-switch styles Hyprland
+  offers, with the theme's current values marked "current". Those values mirror
+  the Motion block in ../hyprland.lua; update both together.
+  Reference: https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+-->
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Infrared Snooze: animation options</title>
+<style>
+  :root {
+    --ember:#cc432e;
+    --background:#150b0b; --foreground:#c2a08e; --muted-foreground:#896d65;
+    --border:#3d1f1c; --card:#211312; --code-background:#0f0808; --code-foreground:#d8b8a2;
+    --font-sans:system-ui, sans-serif; --font-mono:ui-monospace, "JetBrainsMono Nerd Font", monospace;
+    --radius:8px;
+  }
+  body { margin:0; background:var(--background); font-family:var(--font-sans); color:var(--foreground); }
+  .wrap { max-width:760px; margin:0 auto; padding:32px 20px 40px; display:flex; flex-direction:column; gap:30px; }
+  h3 { margin:0 0 3px; font-size:15px; font-weight:600; }
+  h3 code, .sub code { font-family:var(--font-mono); font-size:12px; }
+  .sub { margin:0 0 12px; font-size:12.5px; line-height:1.45; color:var(--muted-foreground); }
+  .controls { display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; margin-bottom:12px; font-size:12.5px; color:var(--muted-foreground); }
+  .controls label { display:flex; align-items:center; gap:8px; }
+  .controls input[type=range] { width:104px; accent-color:var(--ember); }
+  .controls select { background:var(--card); color:var(--foreground); border:1px solid var(--border); border-radius:6px; padding:3px 6px; font:inherit; font-size:12.5px; }
+  .val { font-family:var(--font-mono); color:var(--foreground); min-width:46px; display:inline-block; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px 12px; }
+  @media (max-width:520px) { .grid { grid-template-columns:repeat(2,1fr); } }
+  .tile { cursor:pointer; }
+  .screen { position:relative; aspect-ratio:16/10; border-radius:var(--radius); overflow:hidden;
+    background:radial-gradient(ellipse at 72% 118%, #6a1d12 0%, #2c0f0b 42%, #0f0808 80%);
+    outline:2px solid transparent; outline-offset:2px; transition:outline-color .15s; }
+  .tile:hover .screen { outline-color:var(--border); }
+  .tile.sel .screen { outline-color:var(--ember); }
+  .label { display:flex; align-items:center; gap:6px; margin-top:7px; font-family:var(--font-mono); font-size:12px; }
+  .badge { font-family:var(--font-sans); font-size:10.5px; padding:1px 7px; border-radius:999px; background:rgba(204,67,46,.16); color:var(--ember); }
+  .bar { position:absolute; left:0; right:0; top:0; height:8%; background:rgba(9,5,5,.78); display:flex; align-items:center; gap:4px; padding-left:3.5%; z-index:5; }
+  .dot { width:5px; height:5px; border-radius:50%; background:#785c56; opacity:.55; }
+  .dot.on { background:#cc432e; opacity:1; }
+  .ws { position:absolute; inset:0; will-change:transform,opacity; }
+  .win { position:absolute; border-radius:5px; background:#3d1f1c; will-change:transform,opacity; }
+  .win .act { position:absolute; inset:0; border-radius:inherit; background:linear-gradient(45deg,#9e2418,#cc432e,#d27a3a); opacity:0; }
+  .win .body { position:absolute; inset:1.5px; border-radius:4px; background:rgba(21,11,11,.92); padding:9% 9%; display:flex; flex-direction:column; gap:7%; overflow:hidden; }
+  .ln { height:3px; border-radius:2px; background:#896d65; opacity:.55; flex:none; }
+  .hero { flex:none; height:38%; border-radius:3px; background:linear-gradient(120deg,#6b3f30,#c99a4a 60%,#d27a3a); opacity:.65; }
+  .code { margin:14px 0 0; padding:16px; border-radius:var(--radius); background:var(--code-background); color:var(--code-foreground);
+    font-family:var(--font-mono); font-size:11.5px; line-height:1.6; white-space:pre-wrap; word-break:break-word; }
+  .curves { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  @media (max-width:520px) { .curves { grid-template-columns:repeat(2,1fr); } }
+  .curve svg { width:100%; max-width:120px; height:auto; display:block; }
+  .curve .name { font-family:var(--font-mono); font-size:12px; margin-top:4px; }
+  .curve .used { font-size:11.5px; color:var(--muted-foreground); line-height:1.4; }
+</style></head>
+<body><div class="wrap">
+
+<section id="close">
+  <h3>Closing a window: <code>windowsOut</code> + <code>fadeOut</code></h3>
+  <p class="sub">The window shrinks/slides with <code>windowsOut</code> while <code>fadeOut</code> fades it at the same time, and the neighbour grows into the gap with <code>windowsMove</code>. If you slow <code>windowsOut</code>, slow <code>fadeOut</code> too, or the window is already invisible before the motion finishes. Click a screen to get its config line.</p>
+  <div class="controls">
+    <label>windowsOut speed <input type="range" id="cSpeed" min="1" max="10" step="0.5" value="2.5"><span class="val" id="cSpeedV"></span></label>
+    <label>fadeOut speed <input type="range" id="cFade" min="1" max="10" step="0.5" value="2"><span class="val" id="cFadeV"></span></label>
+    <label>curve <select id="cCurve"></select></label>
+  </div>
+  <div class="grid" id="closeGrid"></div>
+  <pre class="code" id="closeCode"></pre>
+</section>
+
+<section id="wsSec">
+  <h3>Switching workspaces: <code>workspaces</code></h3>
+  <p class="sub">The percentage is how far the workspace travels, as a share of the screen. Your scratchpad (<code>specialWorkspace</code>) takes the same styles and uses <code>slidefadevert 20%</code>. Omarchy's own default turns this animation off, so switching is instant.</p>
+  <div class="controls">
+    <label>speed <input type="range" id="wSpeed" min="1" max="12" step="0.5" value="3"><span class="val" id="wSpeedV"></span></label>
+    <label>curve <select id="wCurve"></select></label>
+  </div>
+  <div class="grid" id="wsGrid"></div>
+  <pre class="code" id="wsCode"></pre>
+</section>
+
+<section>
+  <h3>Your three curves</h3>
+  <p class="sub">Time runs left to right, progress bottom to top. A steep start means fast first, then a gentle settle.</p>
+  <div class="curves" id="curves"></div>
+</section>
+
+</div>
+<script>
+const CURVES = {
+  drowse:[0.22,1,0.36,1], doze:[0.55,0,1,0.45], glow:[0.4,0,0.2,1],
+  easeOutQuint:[0.23,1,0.32,1], linear:[0,0,1,1], almostLinear:[0.5,0.5,0.75,1], overshoot:[0.5,0.9,0.1,1.1]
+};
+const GROUPS = [["Theme curves",["drowse","doze","glow"]],["Omarchy defaults",["easeOutQuint","linear","almostLinear"]],["Wiki example",["overshoot"]]];
+const cub = (a,b,t) => 3*(1-t)*(1-t)*t*a + 3*(1-t)*t*t*b + t*t*t;
+function ease(name, x) {
+  if (x <= 0) return 0; if (x >= 1) return 1;
+  const [x1,y1,x2,y2] = CURVES[name]; let lo = 0, hi = 1, t = x;
+  for (let i = 0; i < 28; i++) { t = (lo+hi)/2; if (cub(x1,x2,t) < x) lo = t; else hi = t; }
+  return cub(y1,y2,t);
+}
+const clamp = x => x < 0 ? 0 : x > 1 ? 1 : x;
+const $ = id => document.getElementById(id);
+
+for (const id of ["cCurve","wCurve"]) {
+  $(id).innerHTML = GROUPS.map(([g,ns]) => `<optgroup label="${g}">${ns.map(n=>`<option>${n}</option>`).join("")}</optgroup>`).join("");
+}
+$("cCurve").value = "doze"; $("wCurve").value = "doze";
+
+const P = { close:{t0:performance.now()}, ws:{t0:performance.now()} };
+function readControls() {
+  P.close.speed = +$("cSpeed").value; P.close.fade = +$("cFade").value; P.close.curve = $("cCurve").value;
+  P.ws.speed = +$("wSpeed").value; P.ws.curve = $("wCurve").value;
+  $("cSpeedV").textContent = P.close.speed*100 + "ms";
+  $("cFadeV").textContent = P.close.fade*100 + "ms";
+  $("wSpeedV").textContent = P.ws.speed*100 + "ms";
+}
+for (const id of ["cSpeed","cFade","cCurve"]) $(id).addEventListener("input", () => { readControls(); P.close.t0 = performance.now(); renderCode(); });
+for (const id of ["wSpeed","wCurve"]) $(id).addEventListener("input", () => { readControls(); P.ws.t0 = performance.now(); renderCode(); });
+
+const LW = [78,52,66,40,70,58,46];
+const lines = n => Array.from({length:n},(_,i)=>`<div class="ln" style="width:${LW[i%7]}%;${i===0?"background:#d27a3a;opacity:.75":""}"></div>`).join("");
+const win = (style, inner, active) => `<div class="win" style="${style}"><div class="act" style="opacity:${active?1:0}"></div><div class="body">${inner}</div></div>`;
+const bar = n => `<div class="bar">${[1,2,3].map(i=>`<div class="dot${i===n?" on":""}"></div>`).join("")}</div>`;
+const HALF = 46.75, LEFT = "left:2.5%;top:11%;height:86%;", RIGHT = "left:50.75%;top:11%;height:86%;";
+
+function makeTile(grid, style, current, inner, onSel) {
+  const el = document.createElement("div");
+  el.className = "tile";
+  el.innerHTML = `<div class="screen">${inner}</div><div class="label">${style}${current?'<span class="badge">current</span>':""}</div>`;
+  el.addEventListener("click", () => { grid.querySelectorAll(".tile").forEach(t=>t.classList.remove("sel")); el.classList.add("sel"); onSel(); });
+  if (current) el.classList.add("sel");
+  grid.appendChild(el);
+  return el;
+}
+
+// ---- closing ----
+const CLOSE_STYLES = [["popin 90%",true],["popin 50%"],["gnomed"],["slide"],["slide bottom"],["slide top"]];
+let closeSel = "popin 90%";
+const closeTiles = CLOSE_STYLES.map(([s,cur]) => {
+  const el = makeTile($("closeGrid"), s, cur,
+    bar(1) + win(LEFT+`width:${HALF}%`, lines(6), false) + win(RIGHT+`width:${HALF}%`, lines(5), true),
+    () => { closeSel = s; renderCode(); });
+  const wins = el.querySelectorAll(".win");
+  return { style:s, A:wins[0], Aact:wins[0].querySelector(".act"), B:wins[1] };
+});
+
+function closeFrame(t, a, e) {
+  const { A, Aact, B, style } = t;
+  if (a < 0) {
+    B.style.opacity = Math.min(1, e/220); B.style.transform = "none";
+    A.style.width = HALF + "%"; Aact.style.opacity = 0; return;
+  }
+  const pc = ease(P.close.curve, clamp(a/(P.close.speed*100)));
+  const pf = ease("doze", clamp(a/(P.close.fade*100)));
+  const pm = ease("drowse", clamp(a/400));
+  const pb = ease("glow", clamp(a/600));
+  B.style.opacity = 1 - pf;
+  const [k, arg] = style.split(" ");
+  let tr = "none";
+  if (k === "popin") { const m = parseFloat(arg)/100; tr = `scale(${Math.max(0, 1-(1-m)*pc)})`; }
+  else if (k === "gnomed") tr = `scaleY(${Math.max(0, 1-pc)})`;
+  else if (k === "slide") {
+    const v = pc*100, d = arg || "right";
+    tr = d === "right" ? `translateX(${v}%)` : d === "left" ? `translateX(${-v}%)` : d === "bottom" ? `translateY(${v}%)` : `translateY(${-v}%)`;
+  }
+  B.style.transform = tr;
+  A.style.width = (HALF + (95-HALF)*pm) + "%";
+  Aact.style.opacity = pb;
+}
+
+// ---- workspaces ----
+const WS_STYLES = [["slidefade 12%"],["slidefade 40%"],["slidefadevert 20%"],["slide"],["slidevert"],["fade",true]];
+let wsSel = "fade";
+const ws1 = `<div class="ws">${win(LEFT+`width:${HALF}%`, lines(6), false)}${win(RIGHT+`width:${HALF}%`, lines(5), true)}</div>`;
+const ws2 = `<div class="ws">${win("left:2.5%;top:11%;width:95%;height:86%", `<div class="hero"></div>${lines(4)}`, true)}</div>`;
+const wsTiles = WS_STYLES.map(([s,cur]) => {
+  const el = makeTile($("wsGrid"), s, cur, bar(1) + ws1 + ws2, () => { wsSel = s; renderCode(); });
+  const [k, pct] = s.split(" ");
+  const layers = el.querySelectorAll(".ws");
+  return { vert:k.endsWith("vert"), fade:k.startsWith("slidefade") || k === "fade",
+           p: k === "fade" ? 0 : (pct ? parseFloat(pct) : 100),
+           W1:layers[0], W2:layers[1], dots:el.querySelectorAll(".dot") };
+});
+
+function place(el, off, alpha, vert) {
+  el.style.transform = vert ? `translateY(${off}%)` : `translateX(${off}%)`;
+  el.style.opacity = alpha;
+}
+function wsFrame(t, e) {
+  const D = P.ws.speed*100, H = 1000;
+  let from, to, q = null;
+  if (e < H) { from = 1; }
+  else if (e < H+D) { from = 1; to = 2; q = (e-H)/D; }
+  else if (e < 2*H+D) { from = 2; }
+  else { from = 2; to = 1; q = (e-2*H-D)/D; }
+  const [W1, W2] = [t.W1, t.W2];
+  const show = q === null ? from : to;
+  t.dots.forEach((d,i) => d.classList.toggle("on", i+1 === show));
+  if (q === null) { place(from===1?W1:W2, 0, 1, t.vert); place(from===1?W2:W1, 0, 0, t.vert); return; }
+  const k = ease(P.ws.curve, q), dir = to > from ? 1 : -1;
+  const oldEl = from === 1 ? W1 : W2, newEl = from === 1 ? W2 : W1;
+  place(oldEl, -dir*t.p*k, t.fade ? 1-k : 1, t.vert);
+  place(newEl,  dir*t.p*(1-k), t.fade ? k : 1, t.vert);
+}
+
+// ---- curves ----
+const USED = { drowse:"windowsMove", doze:"windowsOut, fadeOut, workspaces", glow:"windows, windowsIn, border, fadeIn, fadeDim, specialWorkspace" };
+const curveDots = Object.keys(USED).map(n => {
+  const [x1,y1,x2,y2] = CURVES[n];
+  const X = v => 10 + 80*v, Y = v => 90 - 80*v;
+  let d = "";
+  for (let i = 0; i <= 50; i++) { const s = i/50; d += (i?"L":"M") + X(cub(x1,x2,s)).toFixed(2) + " " + Y(cub(y1,y2,s)).toFixed(2); }
+  const el = document.createElement("div"); el.className = "curve";
+  el.innerHTML = `<svg viewBox="0 0 100 100">
+      <rect x="10" y="10" width="80" height="80" fill="none" stroke="var(--border)" stroke-width="0.8"/>
+      <path d="M10 90L90 10" stroke="var(--border)" stroke-width="0.8" stroke-dasharray="2 2" fill="none"/>
+      <path d="${d}" stroke="#cc432e" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle r="3" fill="#d27a3a"/></svg>
+    <div class="name">${n}</div><div class="used">${USED[n]}</div>`;
+  $("curves").appendChild(el);
+  return { n, c: el.querySelector("circle"), X, Y };
+});
+
+// ---- config snippets ----
+const curveDef = n => ["overshoot"].includes(n)
+  ? `hl.curve("${n}", { type = "bezier", points = { { ${CURVES[n][0]}, ${CURVES[n][1]} }, { ${CURVES[n][2]}, ${CURVES[n][3]} } } })\n` : "";
+function renderCode() {
+  $("closeCode").textContent = curveDef(P.close.curve) +
+    `hl.animation({ leaf = "windowsOut", enabled = true, speed = ${P.close.speed}, bezier = "${P.close.curve}", style = "${closeSel}" })\n` +
+    `hl.animation({ leaf = "fadeOut", enabled = true, speed = ${P.close.fade}, bezier = "doze" })`;
+  $("wsCode").textContent = curveDef(P.ws.curve) +
+    `hl.animation({ leaf = "workspaces", enabled = true, speed = ${P.ws.speed}, bezier = "${P.ws.curve}", style = "${wsSel}" })`;
+}
+
+readControls(); renderCode();
+function frame(now) {
+  const preC = 900, spanC = Math.max(P.close.speed*100, P.close.fade*100, 600), cycC = preC + spanC + 1000;
+  const eC = (now - P.close.t0) % cycC;
+  closeTiles.forEach(t => closeFrame(t, eC < preC ? -1 : eC - preC, eC));
+  const cycW = 2*(1000 + P.ws.speed*100), eW = (now - P.ws.t0) % cycW;
+  wsTiles.forEach(t => wsFrame(t, eW));
+  const eK = (now % 2200) / 1400;
+  curveDots.forEach(({n,c,X,Y}) => { const x = clamp(eK); c.setAttribute("cx", X(x)); c.setAttribute("cy", Y(ease(n, x))); });
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body></html>

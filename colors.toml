@@ -48,5 +48,5 @@ bright_magenta = "#c27b85"
 
 # Shared by Hyprland window borders and the Omarchy shell (popups,
 # notifications, lock screen). Deep red to ember red to amber.
-hyprland_active_border = "rgba(9e2418dd) rgba(cc432edd) rgba(d27a3abb) 45deg"
+hyprland_active_border = "rgba(9e2418dd) rgba(cc432edd) rgba(cc432edd) rgba(d27a3abb) 45deg"
 hyprland_inactive_border = "rgba(3d1f1c99)"

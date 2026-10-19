@@ -1,10 +1,3 @@
--- Infrared Snooze: Hyprland look and feel.
---
--- Loaded after Omarchy's defaults (default/hypr/looknfeel.lua and windows.lua),
--- so anything set here wins. The border colours mirror
--- hyprland_active_border / hyprland_inactive_border in colors.toml; change
--- both together.
-
 local active_border_color = { colors = { "rgba(9e2418dd)", "rgba(cc432edd)", "rgba(d27a3abb)" }, angle = 45 }
 local inactive_border_color = "rgba(3d1f1c99)"
 
@@ -95,18 +88,36 @@ hl.layer_rule({
 -- Motion --------------------------------------------------------------------
 -- Slow, soft easing: things drift in like waking up and settle without
 -- overshoot. Curves must be defined before an animation names them.
+-- speed is in tenths of a second. Live preview of the styles:
+-- docs/animations.html.
+
+-- drowse: fast start, long soft settle.
 hl.curve("drowse", { type = "bezier", points = { { 0.22, 1 }, { 0.36, 1 } } })
-hl.curve("wake", { type = "bezier", points = { { 0.16, 1 }, { 0.3, 1 } } })
+-- doze: starts slow and speeds up, so closing windows linger then drop away.
 hl.curve("doze", { type = "bezier", points = { { 0.55, 0 }, { 1, 0.45 } } })
+-- glow: even ease in and out.
 hl.curve("glow", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } })
 
-hl.animation({ leaf = "windows", enabled = true, speed = 4.5, bezier = "drowse" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "wake", style = "popin 90%" })
+-- Windows. Only a fallback: windowsIn, windowsOut and windowsMove all
+-- set their own values.
+hl.animation({ leaf = "windows", enabled = true, speed = 4.5, bezier = "glow" })
+-- Opening a window: grows in from slightly smaller.
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "glow", style = "popin 90%" })
+-- Closing a window: shrinks slightly while fadeOut fades it.
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 2.5, bezier = "doze", style = "popin 90%" })
+-- Moving, resizing and retiling windows.
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "drowse" })
+-- Border colour change when focus moves.
 hl.animation({ leaf = "border", enabled = true, speed = 6, bezier = "glow" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 2.5, bezier = "wake" })
+-- Fade when a window opens.
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 2.5, bezier = "glow" })
+-- Fade when a window closes. Keep it close to windowsOut, or the
+-- window turns invisible before it finishes shrinking.
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 2, bezier = "doze" })
+-- Dimming of unfocused windows. No visible effect while
+-- decoration.dim_inactive is off.
 hl.animation({ leaf = "fadeDim", enabled = true, speed = 4, bezier = "glow" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "drowse", style = "slidefade 12%" })
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 4, bezier = "wake", style = "slidefadevert 20%" })
+-- Switching workspaces: crossfades in place, slow at first then quick.
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "doze", style = "fade" })
+-- Scratchpad: slides in vertically while fading.
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 4, bezier = "glow", style = "slidefadevert 20%" })

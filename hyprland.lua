@@ -100,7 +100,7 @@ hl.curve("glow", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } })
 
 -- Windows. Only a fallback: windowsIn, windowsOut and windowsMove all
 -- set their own values.
-hl.animation({ leaf = "windows", enabled = true, speed = 4.5, bezier = "glow" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4.5, bezier = "drowse" })
 -- Opening a window: grows in from slightly smaller.
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "glow", style = "popin 90%" })
 -- Closing a window: shrinks slightly while fadeOut fades it.
@@ -117,7 +117,7 @@ hl.animation({ leaf = "fadeOut", enabled = true, speed = 2, bezier = "doze" })
 -- Dimming of unfocused windows. No visible effect while
 -- decoration.dim_inactive is off.
 hl.animation({ leaf = "fadeDim", enabled = true, speed = 4, bezier = "glow" })
--- Switching workspaces: crossfades in place, slow at first then quick.
-hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "doze", style = "fade" })
+-- Switching workspaces: crossfades in place, quick at first then settling.
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "drowse", style = "fade" })
 -- Scratchpad: slides in vertically while fading.
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 4, bezier = "glow", style = "slidefadevert 20%" })

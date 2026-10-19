@@ -103,7 +103,7 @@ const $ = id => document.getElementById(id);
 for (const id of ["cCurve","wCurve"]) {
   $(id).innerHTML = GROUPS.map(([g,ns]) => `<optgroup label="${g}">${ns.map(n=>`<option>${n}</option>`).join("")}</optgroup>`).join("");
 }
-$("cCurve").value = "doze"; $("wCurve").value = "doze";
+$("cCurve").value = "doze"; $("wCurve").value = "drowse";
 
 const P = { close:{t0:performance.now()}, ws:{t0:performance.now()} };
 function readControls() {
@@ -203,7 +203,7 @@ function wsFrame(t, e) {
 }
 
 // ---- curves ----
-const USED = { drowse:"windowsMove", doze:"windowsOut, fadeOut, workspaces", glow:"windows, windowsIn, border, fadeIn, fadeDim, specialWorkspace" };
+const USED = { drowse:"windows, windowsMove, workspaces", doze:"windowsOut, fadeOut", glow:"windowsIn, border, fadeIn, fadeDim, specialWorkspace" };
 const curveDots = Object.keys(USED).map(n => {
   const [x1,y1,x2,y2] = CURVES[n];
   const X = v => 10 + 80*v, Y = v => 90 - 80*v;

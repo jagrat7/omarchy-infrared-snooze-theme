@@ -2,7 +2,8 @@
 
 ## Idea
 
-A dark room at night lit only by a heat lamp. Surfaces are warm red-black,
+
+Meant to give a comfortable warm fuzzy feeling as you dose off. Surfaces are warm red-black,
 anything that glows is led by an ember red with amber and honey behind it, and
 everything that isn't asking for attention is dim, soft and a little sleepy.
 
@@ -24,7 +25,8 @@ the hand-tuned files below to match.
 | `background` family | `#150b0b` → `#090505` | surfaces, darkest at the edges |
 | `selection` | `#3d1f1c` | selection, quiet borders |
 | `muted` | `#785c56` | comments, line numbers, idle chrome |
-| cool colours (`blue`, `cyan`, `green`, `magenta`) | dim and greyed | anything at rest, so the warm colours mean something |
+| `green`, `blue`, `magenta` | `#c4865f` peach, `#b4513b` rust, `#ad6670` rose | the ANSI slots terminal tools hardcode (fastfetch, `ls`, git): warm, so those tools stay in the theme |
+| `cyan` | `#6f8f84` | the one cool colour left; dim and greyed |
 
 Rules:
 
@@ -37,8 +39,11 @@ Rules:
   appear behind it (the border's tail, warnings, the middle of ramps), never
   as the main focus colour.
 - **Warm colours keep blue low.** Ember, amber and honey come mostly from the
-  red subpixel. Cool colours exist for meaning (diffs, links, info) and are
-  dimmed and greyed so they give out as little blue as they can.
+  red subpixel.
+- **The ANSI slots stay in the theme's hue.** Tools like fastfetch, `ls` and
+  git ask the terminal for "green", "blue" and "magenta" by name, so those
+  slots hold warm colours (peach, rust, rose), the same way Lumon and Invasion
+  keep theirs blue. Only `cyan` stays cool, dimmed and greyed.
 - **Lean ember and amber over bright yellow.** Yellow has a lot of green, and
   green still registers at screen-level light, so use honey sparingly and dim.
 - **Highlights are warm grey, not tinted.** Hovered and selected rows lift

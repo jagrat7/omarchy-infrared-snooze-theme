@@ -104,7 +104,7 @@ hl.animation({ leaf = "windows", enabled = true, speed = 4.5, bezier = "drowse" 
 -- Opening a window: grows in from slightly smaller.
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "glow", style = "popin 90%" })
 -- Closing a window: shrinks slightly while fadeOut fades it.
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 2.5, bezier = "doze", style = "popin 90%" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 2.5, bezier = "glow", style = "slide" })
 -- Moving, resizing and retiling windows.
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "drowse" })
 -- Border colour change when focus moves.

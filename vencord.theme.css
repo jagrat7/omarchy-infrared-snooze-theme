@@ -49,6 +49,7 @@ body {
     --cooling-messages: on;
     --sleepy-scrollbars: on;
     --glowing-divider: on;
+    --glowing-server: on;
 }
 
 :root {
@@ -336,6 +337,39 @@ body {
         .endCap__908e2 {
             filter: drop-shadow(0 0 4px color-mix(in srgb, var(--divider-color) 18%, transparent));
         }
+    }
+}
+
+/*
+ * Glowing server. The bar beside the server you're in, and the shorter one
+ * that grows when you hover a server, turn ember and fade out at both ends,
+ * so they read as light rather than a block. The icon itself stays
+ * untouched; a glow around it turns into a brown smudge on the dark panel.
+ */
+@property --glowing-server {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--glowing-server: on) {
+    /* The fade grows with the bar: none on the 8px unread dot, so it stays a
+       dot, and 30% at each end by the time it's hover height. Discord
+       animates the height, so the fade grows smoothly along with it. */
+    .item__58105 {
+        --irs-pill-fade: min(30%, (100% - 8px) / 2);
+        background-color: var(--irs-accent);
+        mask-image: linear-gradient(transparent, #000 var(--irs-pill-fade), #000 calc(100% - var(--irs-pill-fade)), transparent);
+    }
+
+    /* The unread dot keeps its own colour; hovering an unread server warms
+       it into ember as it grows, and it cools back as it shrinks. */
+    .item__58105.visible__58105:not(.hovered__58105, .selected__58105) {
+        background-color: var(--text-strong);
+    }
+
+    .full-motion .item__58105 {
+        transition: height 0.2s ease-out, opacity 0.2s ease-out, transform 0.2s ease-out, background-color 0.2s ease-out;
     }
 }
 

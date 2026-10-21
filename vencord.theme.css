@@ -91,7 +91,7 @@ body {
     --reply: linear-gradient(to right, color-mix(in srgb, #c4865f 12%, transparent) 40%, transparent);
     --reply-hover: linear-gradient(to right, color-mix(in srgb, #c4865f 7%, transparent) 40%, transparent);
 
-    --online: #cc432e;
+    --online: #993223;
     --dnd: #c2445f;
     --idle: #c99a4a;
     --streaming: #ad6670;
@@ -107,11 +107,11 @@ body {
     --red-3: #c2445f;
     --red-4: color-mix(in srgb, #c2445f, #ffffff 14%);
     --red-5: color-mix(in srgb, #c2445f, #150b0b 18%);
-    --green-1: #d85a43;
-    --green-2: #cc432e;
-    --green-3: #cc432e;
-    --green-4: color-mix(in srgb, #cc432e, #ffffff 14%);
-    --green-5: color-mix(in srgb, #cc432e, #150b0b 18%);
+    --green-1: #cc432e;
+    --green-2: #993223;
+    --green-3: #993223;
+    --green-4: color-mix(in srgb, #993223, #ffffff 14%);
+    --green-5: color-mix(in srgb, #993223, #150b0b 18%);
     --blue-1: #d89c74;
     --blue-2: #c4865f;
     --blue-3: #c4865f;

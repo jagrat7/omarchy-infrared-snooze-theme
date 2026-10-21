@@ -31,7 +31,7 @@ return {
         red = "#c2445f",
         yellow = "#c99a4a",
         orange = "#d27a3a",
-        green = "#cc432e",
+        green = "#993223",
         cyan = "#b8603e",
         blue = "#c4865f",
         magenta = "#ad6670",
@@ -39,7 +39,7 @@ return {
 
         bright_red = "#d85c74",
         bright_yellow = "#dcb060",
-        bright_green = "#d85a43",
+        bright_green = "#cc432e",
         bright_cyan = "#c68065",
         bright_blue = "#d89c74",
         bright_magenta = "#c27b85",

@@ -1,6 +1,6 @@
 # Infrared Snooze
 
-A dim, dark Omarchy theme made for winding down before bed. No blue tones,
+A warm dimmed, dark Omarchy theme made for winding down before bed. No blue tones,
 just warm reds, embers and soft dusty colours that are easy on the eyes.
 
 ![Infrared Snooze](docs/preview.jpg)
@@ -13,6 +13,8 @@ But colour alone isn't enough: a warmer screen at full brightness still
 suppresses melatonin ([Nagare 2019](https://doi.org/10.1177/1477153517748189)),
 so the theme is kept dim too.
 
+Pair it with the [Darky](https://github.com/mehiel/mehiel.darky) plugin to
+have the theme auto apply close to your bedtime.
 ## Install
 
 Currently (4.0.6) `omarchy theme install` drops every `.lua` file and the terminal configs, so

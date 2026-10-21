@@ -68,7 +68,7 @@ file where the generated one doesn't fit the palette:
 | `gum_env.lua` | the chosen item glows in the accent; filter matches and log levels are amber instead of looking like errors |
 | `shell.toml` | translucent surfaces for blur, a dimmer glow for menus, bright red for wrong-password errors |
 | `helix.toml` | the generated version puts headings and bold text in the error pink and never uses the accent |
-| `vencord.theme.css` | thpm's generated Vesktop theme takes Discord's accent from `blue`, so the client turns periwinkle |
+| `vencord.theme.css` | thpm's generated Vesktop theme takes Discord's accent from `blue`, so the client turns periwinkle; also adds the heat haze (messages blur into the chat bar, which smoulders while there's text in it) |
 
 Terminals, VS Code, Obsidian, Chromium, the keyboard backlight and the rest
 use Omarchy's generated output.

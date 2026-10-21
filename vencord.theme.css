@@ -41,6 +41,9 @@ body {
     --panel-blur: off;
     --custom-chatbar: off;
     --small-user-panel: on;
+
+    /* Infrared Snooze's own effects. See the bottom of the file. */
+    --heat-haze: on;
 }
 
 :root {
@@ -132,4 +135,99 @@ body {
 ::selection {
     background: color-mix(in srgb, var(--irs-accent) 35%, transparent);
     color: var(--irs-bright-fg);
+}
+
+/*
+ * Heat haze. Messages lose focus as they sink toward the chat bar, as if
+ * seen through the air above something warm. Once there's text in the bar
+ * it smoulders: the edge warms to the accent and a dim ember glow rises off
+ * it, slowly swelling and settling. An empty bar stays cold.
+ */
+@property --heat-haze {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--heat-haze: on) {
+    .form_f75fb0 .channelTextArea_f75fb0 {
+        position: relative;
+        transition: box-shadow 0.8s ease;
+
+        /* The haze: a band above the bar that blurs whatever scrolls under
+           it, strongest where it meets the bar. Both bands fade out at the
+           sides too, so they never end in a hard edge past the bar's rounded
+           corners. */
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 100%;
+            height: 36px;
+            pointer-events: none;
+            backdrop-filter: blur(1.5px);
+            mask-image:
+                linear-gradient(to bottom, transparent, #000),
+                linear-gradient(to right, transparent, #000 64px, #000 calc(100% - 64px), transparent);
+            mask-composite: intersect;
+        }
+
+        /* The heat: an ember glow rising off the bar's top edge. */
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 100%;
+            height: 24px;
+            pointer-events: none;
+            background: linear-gradient(to top, color-mix(in srgb, var(--irs-accent) 4%, transparent), transparent);
+            mask-image: linear-gradient(to right, transparent, #000 64px, #000 calc(100% - 64px), transparent);
+            transform-origin: bottom;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        &:focus-within {
+            box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--irs-accent) 8%, transparent);
+        }
+
+        /* Discord only renders the placeholder while the bar is empty. */
+        &:not(:has(.placeholder_ec4baf)) {
+            box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--irs-accent) 18%, transparent);
+
+            &::after {
+                opacity: 1;
+            }
+
+            /* Only swell while you're in the bar. A draft left behind in a
+               window you've switched away from holds still instead of
+               redrawing every frame. */
+            &:focus-within::after {
+                animation: irs-smoulder 5s ease-in-out infinite alternate;
+            }
+        }
+    }
+
+    /* The "is typing" line sits just above the bar; keep it out of the haze. */
+    .inTextChannel_b88801 {
+        z-index: 1;
+    }
+}
+
+@keyframes irs-smoulder {
+    from { transform: scaleY(0.9); }
+    to { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form_f75fb0 .channelTextArea_f75fb0::after {
+        animation: none !important;
+    }
+}
+
+/* Discord adds .reduce-motion when its own Reduced Motion setting is on. */
+.reduce-motion .form_f75fb0 .channelTextArea_f75fb0::after {
+    animation: none !important;
 }

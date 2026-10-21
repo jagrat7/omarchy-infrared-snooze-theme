@@ -46,6 +46,7 @@ body {
     --heat-haze: on;
     --smouldering-badges: on;
     --ember-typing: on;
+    --cooling-messages: on;
 }
 
 :root {
@@ -268,6 +269,26 @@ body {
 
     .dot_b88801 {
         box-shadow: 0 0 4px color-mix(in srgb, var(--irs-accent) 40%, transparent);
+    }
+}
+
+/*
+ * Cooling messages. A message you've sent is ember while it's still sending
+ * (Discord already shows it at half opacity), then cools to normal text.
+ */
+@property --cooling-messages {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--cooling-messages: on) {
+    .messageContent_c19a55 {
+        transition: color 1.2s ease;
+    }
+
+    .isSending_c19a55 {
+        color: var(--irs-accent);
     }
 }
 

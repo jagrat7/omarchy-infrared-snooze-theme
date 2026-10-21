@@ -27,14 +27,7 @@ git clone https://github.com/jagrat7/omarchy-infrared-snooze-theme ~/custom-them
 ln -sT ~/custom-themes/infrared-snooze ~/.config/omarchy/themes/infrared-snooze
 omarchy theme set infrared-snooze
 ```
-
-### Or use [theme-link](https://github.com/ministry-of-taste/theme-link)
-
-**Updating:** `omarchy theme update` skips linked themes. Pull instead:
-
-```bash
-git -C ~/custom-themes/infrared-snooze pull && omarchy theme set infrared-snooze
-```
+Or use [theme-link](https://github.com/ministry-of-taste/theme-link)
 
 
 ### Official way (skip till they fix it):

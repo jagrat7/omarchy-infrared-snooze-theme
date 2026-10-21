@@ -25,7 +25,7 @@ the hand-tuned files below to match.
 | `background` family | `#150b0b` → `#090505` | surfaces, darkest at the edges |
 | `selection` | `#3d1f1c` | selection, quiet borders |
 | `muted` | `#785c56` | comments, line numbers, idle chrome |
-| `green`, `blue`, `magenta`, `cyan` | `#c34f3f` brick, `#c4865f` peach, `#ad6670` rose, `#b8603e` terracotta | the ANSI slots terminal tools hardcode (fastfetch, `ls`, git): warm, so those tools stay in the theme |
+| `green`, `blue`, `magenta`, `cyan` | `#cc432e` ember (the accent), `#c4865f` peach, `#ad6670` rose, `#b8603e` terracotta | the ANSI slots terminal tools hardcode (fastfetch, `ls`, git): warm, so those tools stay in the theme |
 
 Rules:
 
@@ -41,7 +41,7 @@ Rules:
   red subpixel.
 - **The ANSI slots stay in the theme's hue.** Tools like fastfetch, `ls` and
   git ask the terminal for "green", "blue", "magenta" and "cyan" by name, so
-  those slots hold warm colours (brick, peach, rose, terracotta), the same way
+  those slots hold warm colours (ember, peach, rose, terracotta), the same way
   Lumon and Invasion keep theirs blue. No cyan anywhere.
 - **Lean ember and amber over bright yellow.** Yellow has a lot of green, and
   green still registers at screen-level light, so use honey sparingly and dim.

@@ -7,7 +7,7 @@
 #
 # Kept dim on purpose: the text is about 40% of white instead of 70%, and
 # every colour keeps its blue channel low. The ANSI green, blue, magenta and
-# cyan slots are warm too (brick, peach, rose, terracotta), like Lumon and
+# cyan slots are warm too (ember, peach, rose, terracotta), like Lumon and
 # Invasion keep theirs in their own hue, so terminal tools that hardcode those
 # names (fastfetch, ls, git) stay in the theme.
 
@@ -33,7 +33,7 @@ bright_foreground = "#d8b8a2"
 red = "#c2445f"
 yellow = "#c99a4a"
 orange = "#d27a3a"
-green = "#c34f3f"
+green = "#cc432e"
 cyan = "#b8603e"
 blue = "#c4865f"
 magenta = "#ad6670"
@@ -41,7 +41,7 @@ brown = "#6b3f30"
 
 bright_red = "#d85c74"
 bright_yellow = "#dcb060"
-bright_green = "#cf7265"
+bright_green = "#d85a43"
 bright_cyan = "#c68065"
 bright_blue = "#d89c74"
 bright_magenta = "#c27b85"

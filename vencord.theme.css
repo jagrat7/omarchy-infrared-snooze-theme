@@ -47,6 +47,7 @@ body {
     --smouldering-badges: on;
     --ember-typing: on;
     --cooling-messages: on;
+    --sleepy-scrollbars: on;
 }
 
 :root {
@@ -289,6 +290,31 @@ body {
 
     .isSending_c19a55 {
         color: var(--irs-accent);
+    }
+}
+
+/*
+ * Sleepy scrollbars. The chat's scrollbar is a little thinner, the thumb
+ * stays dim, lifts to warm grey under the pointer and only glows ember
+ * while it's being dragged.
+ */
+@property --sleepy-scrollbars {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--sleepy-scrollbars: on) {
+    #app-mount .auto_d125d2::-webkit-scrollbar-thumb {
+        border-width: 5px;
+    }
+
+    #app-mount :is(.auto_d125d2, .thin_d125d2)::-webkit-scrollbar-thumb:hover {
+        background-color: color-mix(in srgb, var(--irs-muted) 45%, var(--bg-1));
+    }
+
+    #app-mount :is(.auto_d125d2, .thin_d125d2)::-webkit-scrollbar-thumb:active {
+        background-color: color-mix(in srgb, var(--irs-accent) 60%, var(--bg-1));
     }
 }
 

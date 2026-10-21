@@ -45,6 +45,7 @@ body {
     /* Infrared Snooze's own effects. See the bottom of the file. */
     --heat-haze: on;
     --smouldering-badges: on;
+    --ember-typing: on;
 }
 
 :root {
@@ -247,6 +248,26 @@ body {
        focused and hold a steady glow otherwise. */
     body:focus-within .numberBadge__463b7::after {
         animation: irs-breathe 5s ease-in-out infinite alternate;
+    }
+}
+
+/*
+ * Ember typing dots. The "is typing" dots turn ember red with a faint glow,
+ * so Discord's own pulse makes them flicker like sparks.
+ */
+@property --ember-typing {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--ember-typing: on) {
+    .base_b88801 .dots_b88801 {
+        color: var(--irs-accent);
+    }
+
+    .dot_b88801 {
+        box-shadow: 0 0 4px color-mix(in srgb, var(--irs-accent) 40%, transparent);
     }
 }
 

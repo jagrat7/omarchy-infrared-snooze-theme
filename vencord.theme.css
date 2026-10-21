@@ -84,17 +84,17 @@ body {
     /* Mute, deafen and the like stay in the error pink, not the accent. */
     --accent-new: var(--red-1);
 
-    /* Mentions glow red; replies to you are a cool blue so the two
+    /* Mentions glow red; replies to you are peach so the two
        never look the same. */
     --mention: linear-gradient(to right, color-mix(in srgb, var(--irs-accent) 14%, transparent) 40%, transparent);
     --mention-hover: linear-gradient(to right, color-mix(in srgb, var(--irs-accent) 8%, transparent) 40%, transparent);
-    --reply: linear-gradient(to right, color-mix(in srgb, #737ea0 12%, transparent) 40%, transparent);
-    --reply-hover: linear-gradient(to right, color-mix(in srgb, #737ea0 7%, transparent) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in srgb, #c4865f 12%, transparent) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in srgb, #c4865f 7%, transparent) 40%, transparent);
 
-    --online: #869a5a;
+    --online: #c34f3f;
     --dnd: #c2445f;
     --idle: #c99a4a;
-    --streaming: #a46f8a;
+    --streaming: #ad6670;
     --offline: #785c56;
 
     --border-light: color-mix(in srgb, var(--irs-muted) 18%, transparent);
@@ -107,26 +107,26 @@ body {
     --red-3: #c2445f;
     --red-4: color-mix(in srgb, #c2445f, #ffffff 14%);
     --red-5: color-mix(in srgb, #c2445f, #150b0b 18%);
-    --green-1: #9db06b;
-    --green-2: #869a5a;
-    --green-3: #869a5a;
-    --green-4: color-mix(in srgb, #869a5a, #ffffff 14%);
-    --green-5: color-mix(in srgb, #869a5a, #150b0b 18%);
-    --blue-1: #8892b3;
-    --blue-2: #737ea0;
-    --blue-3: #737ea0;
-    --blue-4: color-mix(in srgb, #737ea0, #ffffff 14%);
-    --blue-5: color-mix(in srgb, #737ea0, #150b0b 18%);
+    --green-1: #cf7265;
+    --green-2: #c34f3f;
+    --green-3: #c34f3f;
+    --green-4: color-mix(in srgb, #c34f3f, #ffffff 14%);
+    --green-5: color-mix(in srgb, #c34f3f, #150b0b 18%);
+    --blue-1: #d89c74;
+    --blue-2: #c4865f;
+    --blue-3: #c4865f;
+    --blue-4: color-mix(in srgb, #c4865f, #ffffff 14%);
+    --blue-5: color-mix(in srgb, #c4865f, #150b0b 18%);
     --yellow-1: #dcb060;
     --yellow-2: #c99a4a;
     --yellow-3: #c99a4a;
     --yellow-4: color-mix(in srgb, #c99a4a, #ffffff 14%);
     --yellow-5: color-mix(in srgb, #c99a4a, #150b0b 18%);
-    --purple-1: #bb83a0;
-    --purple-2: #a46f8a;
-    --purple-3: #a46f8a;
-    --purple-4: color-mix(in srgb, #a46f8a, #ffffff 14%);
-    --purple-5: color-mix(in srgb, #a46f8a, #150b0b 18%);
+    --purple-1: #c27b85;
+    --purple-2: #ad6670;
+    --purple-3: #ad6670;
+    --purple-4: color-mix(in srgb, #ad6670, #ffffff 14%);
+    --purple-5: color-mix(in srgb, #ad6670, #150b0b 18%);
 }
 
 ::selection {

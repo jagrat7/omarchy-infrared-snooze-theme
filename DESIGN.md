@@ -25,8 +25,7 @@ the hand-tuned files below to match.
 | `background` family | `#150b0b` → `#090505` | surfaces, darkest at the edges |
 | `selection` | `#3d1f1c` | selection, quiet borders |
 | `muted` | `#785c56` | comments, line numbers, idle chrome |
-| `green`, `blue`, `magenta` | `#c4865f` peach, `#b4513b` rust, `#ad6670` rose | the ANSI slots terminal tools hardcode (fastfetch, `ls`, git): warm, so those tools stay in the theme |
-| `cyan` | `#6f8f84` | the one cool colour left; dim and greyed |
+| `green`, `blue`, `magenta`, `cyan` | `#c34f3f` brick, `#c4865f` peach, `#ad6670` rose, `#b8603e` terracotta | the ANSI slots terminal tools hardcode (fastfetch, `ls`, git): warm, so those tools stay in the theme |
 
 Rules:
 
@@ -41,9 +40,9 @@ Rules:
 - **Warm colours keep blue low.** Ember, amber and honey come mostly from the
   red subpixel.
 - **The ANSI slots stay in the theme's hue.** Tools like fastfetch, `ls` and
-  git ask the terminal for "green", "blue" and "magenta" by name, so those
-  slots hold warm colours (peach, rust, rose), the same way Lumon and Invasion
-  keep theirs blue. Only `cyan` stays cool, dimmed and greyed.
+  git ask the terminal for "green", "blue", "magenta" and "cyan" by name, so
+  those slots hold warm colours (brick, peach, rose, terracotta), the same way
+  Lumon and Invasion keep theirs blue. No cyan anywhere.
 - **Lean ember and amber over bright yellow.** Yellow has a lot of green, and
   green still registers at screen-level light, so use honey sparingly and dim.
 - **Highlights are warm grey, not tinted.** Hovered and selected rows lift
@@ -53,7 +52,7 @@ Rules:
 - **The accent and `red` never share a job.** Focus must never look like an
   error, which is why the accent leans orange and `red` leans pink.
 - **Only load glows.** In graphs and meters, rising usage moves from dim to
-  the accent. Free or idle things stay cool.
+  the accent. Free or idle things stay dim.
 - **Unfocused things doze.** Inactive windows are more see-through.
   Menus and tooltips use a dimmer version of the border glow.
 
@@ -68,7 +67,6 @@ file where the generated one doesn't fit the palette:
 | `neovim.lua` | aether.nvim never uses the accent and draws floats and search in blue |
 | `gum_env.lua` | the chosen item glows in the accent; filter matches and log levels are amber instead of looking like errors |
 | `shell.toml` | translucent surfaces for blur, a dimmer glow for menus, bright red for wrong-password errors |
-| `btop.theme` | the generated net box and download graphs are red, which reads as an alarm |
 | `helix.toml` | the generated version puts headings and bold text in the error pink and never uses the accent |
 | `vencord.theme.css` | thpm's generated Vesktop theme takes Discord's accent from `blue`, so the client turns periwinkle |
 

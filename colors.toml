@@ -6,10 +6,10 @@
 # theme takes its colours from here.
 #
 # Kept dim on purpose: the text is about 40% of white instead of 70%, and
-# every colour keeps its blue channel low. The ANSI green, blue and magenta
-# slots are warm too (peach, rust, rose), like Lumon and Invasion keep theirs
-# in their own hue, so terminal tools that hardcode those names (fastfetch,
-# ls, git) stay in the theme. Only cyan is left cool.
+# every colour keeps its blue channel low. The ANSI green, blue, magenta and
+# cyan slots are warm too (brick, peach, rose, terracotta), like Lumon and
+# Invasion keep theirs in their own hue, so terminal tools that hardcode those
+# names (fastfetch, ls, git) stay in the theme.
 
 mode = "dark"
 
@@ -33,17 +33,17 @@ bright_foreground = "#d8b8a2"
 red = "#c2445f"
 yellow = "#c99a4a"
 orange = "#d27a3a"
-green = "#c4865f"
-cyan = "#6f8f84"
-blue = "#b4513b"
+green = "#c34f3f"
+cyan = "#b8603e"
+blue = "#c4865f"
 magenta = "#ad6670"
 brown = "#6b3f30"
 
 bright_red = "#d85c74"
 bright_yellow = "#dcb060"
-bright_green = "#d89c74"
-bright_cyan = "#84a597"
-bright_blue = "#c9644c"
+bright_green = "#cf7265"
+bright_cyan = "#c68065"
+bright_blue = "#d89c74"
 bright_magenta = "#c27b85"
 
 # Shared by Hyprland window borders and the Omarchy shell (popups,

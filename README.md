@@ -30,7 +30,7 @@ Log out and back in once so gum picks up its colours.
 omarchy theme install https://github.com/jagrat7/omarchy-infrared-snooze-theme
 ```
 
-This gives you the palette, the shell surfaces, btop and Helix, but uses
+This gives you the palette, the shell surfaces and Helix, but uses
 Omarchy's default Hyprland look and default Neovim and gum colours.
 
 ## What's included
@@ -43,8 +43,7 @@ Omarchy's default Hyprland look and default Neovim and gum colours.
 - `gum_env.lua`: gum prompt colours for Omarchy's terminal scripts
 - `shell.toml`: translucent bar, menus, popups and notifications, plus a lock
   screen whose error state can't be confused with the normal glow
-- `btop.theme`, `helix.toml`: fixes where the generated colours didn't suit a
-  red theme
+- `helix.toml`: fixes where the generated colours didn't suit a red theme
 - `vencord.theme.css`: Vesktop / Vencord with an ember red accent and warm
   surfaces. Installed by [thpm](https://github.com/OldJobobo/thpm) when you
   apply the theme

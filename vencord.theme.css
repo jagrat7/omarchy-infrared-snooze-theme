@@ -44,6 +44,7 @@ body {
 
     /* Infrared Snooze's own effects. See the bottom of the file. */
     --heat-haze: on;
+    --smouldering-badges: on;
 }
 
 :root {
@@ -216,18 +217,57 @@ body {
     }
 }
 
+/*
+ * Smouldering badges. Mention counts are the one thing here that should ask
+ * for attention, so they get a soft glow in their own pink that slowly
+ * brightens and fades.
+ */
+@property --smouldering-badges {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--smouldering-badges: on) {
+    .numberBadge__463b7 {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 6px color-mix(in srgb, var(--accent-new) 45%, transparent);
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    }
+
+    /* Breathing redraws every frame, so badges only breathe while Vesktop is
+       focused and hold a steady glow otherwise. */
+    body:focus-within .numberBadge__463b7::after {
+        animation: irs-breathe 5s ease-in-out infinite alternate;
+    }
+}
+
 @keyframes irs-smoulder {
     from { transform: scaleY(0.9); }
     to { transform: scaleY(1); }
 }
 
+@keyframes irs-breathe {
+    from { opacity: 0.3; }
+    to { opacity: 0.9; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .form_f75fb0 .channelTextArea_f75fb0::after {
+    .form_f75fb0 .channelTextArea_f75fb0::after,
+    .numberBadge__463b7::after {
         animation: none !important;
     }
 }
 
 /* Discord adds .reduce-motion when its own Reduced Motion setting is on. */
-.reduce-motion .form_f75fb0 .channelTextArea_f75fb0::after {
+.reduce-motion :is(.form_f75fb0 .channelTextArea_f75fb0, .numberBadge__463b7)::after {
     animation: none !important;
 }

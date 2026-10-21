@@ -13,7 +13,7 @@ But colour alone isn't enough: a warmer screen at full brightness still
 suppresses melatonin ([Nagare 2019](https://doi.org/10.1177/1477153517748189)),
 so the theme is kept dim too.
 
-Pair it with the [Darky](https://github.com/mehiel/mehiel.darky) plugin to
+Pair it with the [Darky](https://github.com/jagrat7/mehiel.darky) plugin to
 have the theme auto apply close to your bedtime.
 ## Install
 

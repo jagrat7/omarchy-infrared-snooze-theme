@@ -48,6 +48,7 @@ body {
     --ember-typing: on;
     --cooling-messages: on;
     --sleepy-scrollbars: on;
+    --glowing-divider: on;
 }
 
 :root {
@@ -315,6 +316,26 @@ body {
 
     #app-mount :is(.auto_d125d2, .thin_d125d2)::-webkit-scrollbar-thumb:active {
         background-color: color-mix(in srgb, var(--irs-accent) 60%, var(--bg-1));
+    }
+}
+
+/*
+ * Glowing divider. The "new messages" line and its NEW pill get a faint
+ * glow in their own colour instead of sitting flat.
+ */
+@property --glowing-divider {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--glowing-divider: on) {
+    .divider__908e2.isUnread__908e2 {
+        box-shadow: 0 0 8px color-mix(in srgb, var(--divider-color) 18%, transparent);
+
+        .endCap__908e2 {
+            filter: drop-shadow(0 0 4px color-mix(in srgb, var(--divider-color) 18%, transparent));
+        }
     }
 }
 

@@ -3,7 +3,16 @@
 A warm dimmed, dark Omarchy theme made for winding down before bed. No blue tones,
 just warm reds, embers and soft dusty colours that are easy on the eyes.
 
+
 ![Infrared Snooze](docs/preview.jpg)
+
+<!--<p align="center">
+  <img src="docs/palette.svg" width="100%" alt="Infrared Snooze palette">
+</p>-->
+
+<img src="docs/swatches-full.svg" width="100%" alt="Terminal, surface, text and accent colours">
+
+
 
 ## Why red and dim?
 
@@ -15,6 +24,8 @@ so the theme is kept dim too.
 
 Pair it with the [Darky](https://github.com/jagrat7/mehiel.darky) plugin to
 have the theme auto apply close to your bedtime.
+
+
 ## Install
 
 Currently (4.0.6) `omarchy theme install` drops every `.lua` file and the terminal configs, so
@@ -52,3 +63,15 @@ omarchy theme install https://github.com/jagrat7/omarchy-infrared-snooze-theme
   </tr>
 </table>
 
+## In the terminal
+
+<table align="center">
+  <tr>
+    <td align="center"><a href="docs/nvim.png"><img src="docs/nvim.png" width="420" alt="Neovim"></a><br><sub>Neovim</sub></td>
+    <td align="center"><a href="docs/btop.png"><img src="docs/btop.png" width="420" alt="btop"></a><br><sub>btop</sub></td>
+  </tr>
+</table>
+
+## Vesktop
+
+<a href="docs/vesktop.webp"><img src="docs/vesktop.webp" width="100%" alt="Vesktop"></a>

@@ -1,12 +1,9 @@
 # Infrared Snooze
 
-A warm dimmed, dark Omarchy theme made for winding down before bed. No blue tones,
-just warm reds, embers and soft dusty colours that are easy on the eyes.
+A warm dimmed, dark Omarchy theme made help you wind down before bed.
 
 
-![Infrared Snooze](docs/preview-github.jpg)
-
-<img src="docs/swatches-squares.svg" width="100%" alt="Colour swatches as squares">
+![Infrared Snooze](/preview.png)
 
 
 
@@ -73,3 +70,7 @@ omarchy theme install https://github.com/jagrat7/omarchy-infrared-snooze-theme
 ## Vesktop
 
 <a href="docs/vesktop.webp"><img src="docs/vesktop.webp" width="100%" alt="Vesktop"></a>
+
+## Palette
+
+<img src="docs/palette.svg" width="100%" alt="Infrared Snooze palette">

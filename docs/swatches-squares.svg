@@ -1,52 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="194" viewBox="0 0 880 194" font-family="Maple Mono, JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-<rect x="9.0" y="1" width="44" height="44" rx="12" fill="#150b0b" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="57.0" y="1" width="44" height="44" rx="12" fill="#785c56" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="55.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">black</text>
-<text x="55.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">150b0b 785c56</text>
-<rect x="119.0" y="1" width="44" height="44" rx="12" fill="#c2445f" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="167.0" y="1" width="44" height="44" rx="12" fill="#d85c74" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="165.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">red</text>
-<text x="165.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c2445f d85c74</text>
-<rect x="229.0" y="1" width="44" height="44" rx="12" fill="#993223" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="277.0" y="1" width="44" height="44" rx="12" fill="#cc432e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="275.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">green</text>
-<text x="275.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">993223 cc432e</text>
-<rect x="339.0" y="1" width="44" height="44" rx="12" fill="#c99a4a" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="387.0" y="1" width="44" height="44" rx="12" fill="#dcb060" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="385.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">yellow</text>
-<text x="385.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c99a4a dcb060</text>
-<rect x="449.0" y="1" width="44" height="44" rx="12" fill="#c4865f" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="497.0" y="1" width="44" height="44" rx="12" fill="#d89c74" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="495.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">blue</text>
-<text x="495.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c4865f d89c74</text>
-<rect x="559.0" y="1" width="44" height="44" rx="12" fill="#ad6670" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="607.0" y="1" width="44" height="44" rx="12" fill="#c27b85" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="605.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">magenta</text>
-<text x="605.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">ad6670 c27b85</text>
-<rect x="669.0" y="1" width="44" height="44" rx="12" fill="#b8603e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="717.0" y="1" width="44" height="44" rx="12" fill="#c68065" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="715.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">cyan</text>
-<text x="715.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">b8603e c68065</text>
-<rect x="779.0" y="1" width="44" height="44" rx="12" fill="#c2a08e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="827.0" y="1" width="44" height="44" rx="12" fill="#d8b8a2" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="825.0" y="68.0" font-size="14" text-anchor="middle" fill="#896d65">white</text>
-<text x="825.0" y="88.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c2a08e d8b8a2</text>
-<rect x="28.7" y="118" width="44" height="44" rx="12" fill="#090505" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="76.7" y="118" width="44" height="44" rx="12" fill="#0f0808" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="124.7" y="118" width="44" height="44" rx="12" fill="#150b0b" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="172.7" y="118" width="44" height="44" rx="12" fill="#211312" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="220.7" y="118" width="44" height="44" rx="12" fill="#3d1f1c" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="146.7" y="186.0" font-size="14" text-anchor="middle" fill="#896d65">surfaces</text>
-<rect x="322.0" y="118" width="44" height="44" rx="12" fill="#785c56" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="370.0" y="118" width="44" height="44" rx="12" fill="#896d65" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="418.0" y="118" width="44" height="44" rx="12" fill="#b69684" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="466.0" y="118" width="44" height="44" rx="12" fill="#c2a08e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="514.0" y="118" width="44" height="44" rx="12" fill="#d8b8a2" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="440.0" y="186.0" font-size="14" text-anchor="middle" fill="#896d65">text</text>
-<rect x="615.3" y="118" width="44" height="44" rx="12" fill="#993223" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="663.3" y="118" width="44" height="44" rx="12" fill="#cc432e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="711.3" y="118" width="44" height="44" rx="12" fill="#d27a3a" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="759.3" y="118" width="44" height="44" rx="12" fill="#c99a4a" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<rect x="807.3" y="118" width="44" height="44" rx="12" fill="#c2445f" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
-<text x="733.3" y="186.0" font-size="14" text-anchor="middle" fill="#896d65">accents</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="158" viewBox="0 0 880 158" font-family="Maple Mono, JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<rect x="27.0" y="1" width="26" height="26" rx="6" fill="#150b0b" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="57.0" y="1" width="26" height="26" rx="6" fill="#785c56" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="55.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">black</text>
+<text x="55.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">150b0b 785c56</text>
+<rect x="137.0" y="1" width="26" height="26" rx="6" fill="#c2445f" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="167.0" y="1" width="26" height="26" rx="6" fill="#d85c74" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="165.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">red</text>
+<text x="165.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c2445f d85c74</text>
+<rect x="247.0" y="1" width="26" height="26" rx="6" fill="#993223" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="277.0" y="1" width="26" height="26" rx="6" fill="#cc432e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="275.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">green</text>
+<text x="275.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">993223 cc432e</text>
+<rect x="357.0" y="1" width="26" height="26" rx="6" fill="#c99a4a" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="387.0" y="1" width="26" height="26" rx="6" fill="#dcb060" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="385.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">yellow</text>
+<text x="385.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c99a4a dcb060</text>
+<rect x="467.0" y="1" width="26" height="26" rx="6" fill="#c4865f" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="497.0" y="1" width="26" height="26" rx="6" fill="#d89c74" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="495.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">blue</text>
+<text x="495.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c4865f d89c74</text>
+<rect x="577.0" y="1" width="26" height="26" rx="6" fill="#ad6670" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="607.0" y="1" width="26" height="26" rx="6" fill="#c27b85" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="605.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">magenta</text>
+<text x="605.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">ad6670 c27b85</text>
+<rect x="687.0" y="1" width="26" height="26" rx="6" fill="#b8603e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="717.0" y="1" width="26" height="26" rx="6" fill="#c68065" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="715.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">cyan</text>
+<text x="715.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">b8603e c68065</text>
+<rect x="797.0" y="1" width="26" height="26" rx="6" fill="#c2a08e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="827.0" y="1" width="26" height="26" rx="6" fill="#d8b8a2" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="825.0" y="50.0" font-size="14" text-anchor="middle" fill="#896d65">white</text>
+<text x="825.0" y="70.0" font-size="11" text-anchor="middle" fill="#896d65" fill-opacity="0.8">c2a08e d8b8a2</text>
+<rect x="73.7" y="100" width="26" height="26" rx="6" fill="#090505" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="103.7" y="100" width="26" height="26" rx="6" fill="#0f0808" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="133.7" y="100" width="26" height="26" rx="6" fill="#150b0b" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="163.7" y="100" width="26" height="26" rx="6" fill="#211312" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="193.7" y="100" width="26" height="26" rx="6" fill="#3d1f1c" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="146.7" y="150.0" font-size="14" text-anchor="middle" fill="#896d65">surfaces</text>
+<rect x="367.0" y="100" width="26" height="26" rx="6" fill="#785c56" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="397.0" y="100" width="26" height="26" rx="6" fill="#896d65" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="427.0" y="100" width="26" height="26" rx="6" fill="#b69684" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="457.0" y="100" width="26" height="26" rx="6" fill="#c2a08e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="487.0" y="100" width="26" height="26" rx="6" fill="#d8b8a2" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="440.0" y="150.0" font-size="14" text-anchor="middle" fill="#896d65">text</text>
+<rect x="660.3" y="100" width="26" height="26" rx="6" fill="#993223" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="690.3" y="100" width="26" height="26" rx="6" fill="#cc432e" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="720.3" y="100" width="26" height="26" rx="6" fill="#d27a3a" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="750.3" y="100" width="26" height="26" rx="6" fill="#c99a4a" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<rect x="780.3" y="100" width="26" height="26" rx="6" fill="#c2445f" stroke="#3d1f1c" stroke-width="1" stroke-opacity="0.6"/>
+<text x="733.3" y="150.0" font-size="14" text-anchor="middle" fill="#896d65">accents</text>
 </svg>

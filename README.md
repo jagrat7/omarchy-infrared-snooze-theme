@@ -4,13 +4,11 @@ A warm dimmed, dark Omarchy theme made for winding down before bed. No blue tone
 just warm reds, embers and soft dusty colours that are easy on the eyes.
 
 
-![Infrared Snooze](docs/preview.jpg)
+![Infrared Snooze](docs/preview-github.jpg)
 
-<!--<p align="center">
-  <img src="docs/palette.svg" width="100%" alt="Infrared Snooze palette">
-</p>-->
+<img src="docs/swatches-squares.svg" width="100%" alt="Colour swatches as squares">
 
-<img src="docs/swatches-full.svg" width="100%" alt="Terminal, surface, text and accent colours">
+
 
 
 

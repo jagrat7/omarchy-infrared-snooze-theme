@@ -2,6 +2,10 @@
 
 A warm dimmed, dark Omarchy theme made help you wind down before bed.
 
+<!-- clone-badge:start -->
+[![Dowloads: 271 during Oct 9–22, 2026 (UTC)](https://img.shields.io/badge/clones-271%20%C2%B7%20Oct%209%E2%80%9322%2C%202026-cc432e?style=for-the-badge&labelColor=150b0b)](https://github.com/jagrat7/omarchy-infrared-snooze-theme/graphs/traffic)
+<!-- clone-badge:end -->
+
 
 ![Infrared Snooze](/preview.png)
 

@@ -1,49 +1,39 @@
-name: Update clone badge
+name: Update download badge
 
 on:
   schedule:
     - cron: '17 6 * * *' # Daily at 06:17 UTC
   workflow_dispatch:
 
-permissions:
-  contents: write
+permissions: {}
 
 concurrency:
-  group: clone-badge
+  group: download-badge
   cancel-in-progress: false
 
 jobs:
   update:
-    if: github.repository == 'jagrat7/omarchy-infrared-snooze-theme'
+    if: ${{ !github.event.repository.fork }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          ref: ${{ github.event.repository.default_branch }}
-
-      - name: Fetch clone statistics and update badge
+      # The README badge reads this repo's file in the gist through shields.io,
+      # so the count updates without committing to the repo.
+      - name: Publish the 14-day clone count to the badge gist
         env:
           GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+          GIST_ID: 13407b40253c6fb4d6efde0fd591c9a2
+          BADGE_FILE: ${{ github.event.repository.name }}.json
+          LOGO: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#cc432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>'
         shell: bash
         run: |
           if [[ -z "$GH_TOKEN" ]]; then
-            echo '::error::Add the TRAFFIC_TOKEN repository secret with Administration: read permission.'
+            echo '::error::Add the TRAFFIC_TOKEN repository secret with Administration: read and Gists: read and write.'
             exit 1
           fi
-          gh api "repos/$GITHUB_REPOSITORY/traffic/clones" > "$RUNNER_TEMP/clones.json"
-          python3 .github/scripts/update-clone-badge.py < "$RUNNER_TEMP/clones.json"
-
-      - name: Commit updated badge
-        env:
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-        shell: bash
-        run: |
-          if git diff --quiet -- README.md; then
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m 'docs: refresh clone count badge'
-          git push origin "HEAD:$DEFAULT_BRANCH"
+          count=$(gh api "repos/$GITHUB_REPOSITORY/traffic/clones" --jq .count)
+          jq -n --arg file "$BADGE_FILE" --arg count "$count" --arg logo "$LOGO" '{files: {($file): {content: ({
+            schemaVersion: 1, label: "", message: $count, logoSvg: $logo,
+            color: "211312", labelColor: "211312", style: "flat-square", cacheSeconds: 3600
+          } | tojson)}}}' | gh api -X PATCH "gists/$GIST_ID" --input - > /dev/null
+          echo "Published $count clones to $BADGE_FILE"

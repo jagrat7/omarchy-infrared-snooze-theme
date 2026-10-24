@@ -1,10 +1,8 @@
+<a href="#clone-and-link"><img align="right" alt="Downloads in the last 14 days" title="Git clones in the last 14 days" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fjagrat7%2F13407b40253c6fb4d6efde0fd591c9a2%2Fraw%2Fomarchy-infrared-snooze-theme.json"></a>
+
 # Infrared Snooze
 
 A warm dimmed, dark Omarchy theme made help you wind down before bed.
-
-<!-- clone-badge:start -->
-[![Downloads: 299 during Oct 10–23, 2026 (UTC)](https://img.shields.io/badge/downloads-299%20%C2%B7%20Oct%2010%E2%80%9323%2C%202026-cc432e?style=for-the-badge&labelColor=150b0b)](https://github.com/jagrat7/omarchy-infrared-snooze-theme/graphs/traffic)
-<!-- clone-badge:end -->
 
 
 ![Infrared Snooze](/preview.png)

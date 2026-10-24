@@ -23,8 +23,8 @@ def update_badge(readme, traffic):
     period = f"{start}–{end}, {last.year}"
     message = quote(f"{count:,} · {period}", safe="")
     badge = (
-        f"[![Downloads (Git clones): {count:,} during {period} (UTC)]"
-        f"(https://img.shields.io/badge/clones-{message}-cc432e"
+        f"[![Downloads: {count:,} during {period} (UTC)]"
+        f"(https://img.shields.io/badge/downloads-{message}-cc432e"
         "?style=for-the-badge&labelColor=150b0b)]"
         "(https://github.com/jagrat7/omarchy-infrared-snooze-theme/graphs/traffic)"
     )

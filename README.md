@@ -1,6 +1,4 @@
-<a href="#clone-and-link"><img align="right" alt="Downloads in the last 14 days" title="Git clones in the last 14 days" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fjagrat7%2F13407b40253c6fb4d6efde0fd591c9a2%2Fraw%2Fomarchy-infrared-snooze-theme.json"></a>
-
-# Infrared Snooze
+# Infrared Snooze <a href="#clone-and-link"><img alt="Downloads in the last 14 days" title="Git clones in the last 14 days" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fjagrat7%2F13407b40253c6fb4d6efde0fd591c9a2%2Fraw%2Fomarchy-infrared-snooze-theme.json"></a>
 
 A warm dimmed, dark Omarchy theme made help you wind down before bed.
 

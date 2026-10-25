@@ -1,6 +1,6 @@
 # Infrared Snooze
 
-A warm dimmed, dark Omarchy theme made help you wind down before bed.
+A warm dimmed, dark Omarchy theme made to help you wind down before bed.
 
 
 ![Infrared Snooze](/preview.png)

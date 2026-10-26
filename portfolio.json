@@ -1,0 +1,17 @@
+{
+  "type": "desktop",
+  "title": "Infrared Snooze",
+  "description": "Warm, dimmed dark Omarchy theme for winding down before bed. No blue tones, just reds and embers.",
+  "tags": [
+    "Omarchy",
+    "Hyprland",
+    "Lua"
+  ],
+  "image": "preview.png",
+  "images": [
+    "preview.png",
+    "docs/nvim.png",
+    "docs/btop.png",
+    "docs/vesktop.webp"
+  ]
+}

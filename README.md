@@ -58,6 +58,8 @@ omarchy theme install https://github.com/jagrat7/omarchy-infrared-snooze-theme
   </tr>
 </table>
 
+The Sleeping Totoro wallpaper has an 8-second intro. Omarchy plays it once when you log in or switch to the theme, then leaves the still wallpaper in place. Turn intros off with `omarchy theme bg intro disable`.
+
 ## In the terminal
 
 <table align="center">
